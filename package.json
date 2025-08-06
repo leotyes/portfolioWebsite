@@ -1,0 +1,24 @@
+{
+  "name": "portfoliowebsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leotyes/portfolioWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leotyes/portfolioWebsite/issues"
+  },
+  "homepage": "https://github.com/leotyes/portfolioWebsite#readme",
+  "description": "",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.7"
+  }
+}

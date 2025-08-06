@@ -1,0 +1,40 @@
+.title-padding {
+    padding: 8rem !important;
+}
+.title-font {
+    font-size: 75px !important;
+}
+.hello-font {
+    font-size: 60px !important;
+}
+.shadow-white {
+    box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 
+                0 2px 4px -1px rgba(255, 255, 255, 0.06);
+}
+
+.shadow-gradient {
+    box-shadow: 
+        0 0 0.5rem -0.1rem #62EFABFF,
+        30rem 0 0.5rem -0.1rem #F2EA7DFF,
+        60rem 0 0.5rem -0.1rem #FF8797FF,
+        90rem 0 0.5rem -0.1rem #E1A4F4FF,
+        120rem 0 0.5rem -0.1rem #82FFF4FF;
+}
+
+hr.navbar-gradient {
+    border: none;
+    height: 3px;
+    display: block;
+    background: linear-gradient(
+            to right,
+            #62efab 0%,
+            #F2EA7D 25%,
+            #FF8797 50%,
+            #E1A4F4 75%,
+            #82FFF4 100%
+    );
+    margin: 0;
+    position: relative;
+    opacity: 1;
+    width: 100%;
+}

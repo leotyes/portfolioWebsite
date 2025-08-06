@@ -1,0 +1,9 @@
+// Make sure to override variables before the import
+@import "anims";
+
+$primary: #6395EE !default;
+$dark: #10111F;
+$navbar-dark-color: #696B89;
+// $font-family: Lato;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
