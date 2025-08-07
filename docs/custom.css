@@ -24,6 +24,14 @@
         120rem 0 0.5rem -0.1rem #82FFF4FF;
 }
 
+@keyframes bar {
+
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+
+}
+
+
 hr.navbar-gradient {
     border: none;
     height: 3px;
@@ -31,17 +39,22 @@ hr.navbar-gradient {
     background: linear-gradient(
             to right,
             #62efab 0%,
-            #F2EA7D 25%,
-            #FF8797 50%,
-            #E1A4F4 75%,
-            #82FFF4 100%
+            #F2EA7D 20%,
+            #FF8797 40%,
+            #E1A4F4 60%,
+            #82FFF4 80%,
+            #62efab 100%
     );
     margin: 0;
     position: relative;
     opacity: 1;
     width: 100%;
+    background-size: 200%;
+    animation: bar 120s linear infinite;
 }
 
 .description-text {
     color: #696B89FF !important;
 }
+
+/* swing for hovering over card and jack in the box for card entrance */
