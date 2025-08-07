@@ -1,4 +1,26 @@
 @charset "UTF-8";
+@keyframes cardAnimate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.25, 1.25, 1.25);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
 .hr {
   width: 100%;
   height: 2px;
@@ -43,6 +65,77 @@
   background-position: center;
   z-index: 1;
   animation: bar 120s linear infinite;
+}
+
+.rectangle-picture-frame {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #10111F;
+  z-index: 0;
+  overflow: hidden;
+}
+.rectangle-picture-frame .image-container {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  z-index: 1;
+}
+.rectangle-picture-frame .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rectangle-picture-frame::before, .rectangle-picture-frame::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  background: linear-gradient(45deg, #62EFAB, #F2EA7D, #FF8797, #E1A4F4, #82FFF4, #62EFAB);
+  background-size: 400% 400%;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  z-index: -1;
+  animation: cardAnimate 10s linear alternate infinite;
+}
+.rectangle-picture-frame:hover {
+  animation: pulse 500ms ease-in-out infinite;
+}
+.rectangle-picture-frame:hover::before, .rectangle-picture-frame:hover::after {
+  animation-duration: 5s;
+}
+.rectangle-picture-frame:not(:hover) {
+  animation: none;
+}
+
+.special-link {
+  position: relative;
+  text-decoration: none;
+  background: linear-gradient(to right, #62efab 0%, #F2EA7D 20%, #FF8797 40%, #E1A4F4 60%, #82FFF4 80%, #62efab 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  animation: bar 120s linear infinite;
+}
+.special-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(to right, #62efab 0%, #F2EA7D 20%, #FF8797 40%, #E1A4F4 60%, #82FFF4 80%, #62efab 100%);
+  background-size: 400%;
+  animation: bar 120s linear infinite;
+}
+.special-link:hover {
+  animation-duration: 10s;
+}
+.special-link:hover::after {
+  animation-duration: 10s;
 }
 
 /*!
@@ -318,11 +411,9 @@ p {
 }
 
 abbr[title] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   cursor: help;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
 }
 
 address {
@@ -2161,9 +2252,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: var(--bs-body-bg);
   background-clip: padding-box;
   border: var(--bs-border-width) solid var(--bs-border-color);
@@ -2196,10 +2285,6 @@ progress {
 .form-control::-webkit-datetime-edit {
   display: block;
   padding: 0;
-}
-.form-control::-moz-placeholder {
-  color: var(--bs-secondary-color);
-  opacity: 1;
 }
 .form-control::placeholder {
   color: var(--bs-secondary-color);
@@ -2317,9 +2402,7 @@ textarea.form-control-lg {
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: var(--bs-body-bg);
   background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
   background-repeat: no-repeat;
@@ -2400,17 +2483,14 @@ textarea.form-control-lg {
   height: 1em;
   margin-top: 0.25em;
   vertical-align: top;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: var(--bs-form-check-bg);
   background-image: var(--bs-form-check-bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   border: var(--bs-border-width) solid var(--bs-border-color);
-  -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 .form-check-input[type=checkbox] {
   border-radius: 0.25em;
@@ -2508,9 +2588,7 @@ textarea.form-control-lg {
   width: 100%;
   height: 1.5rem;
   padding: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: transparent;
 }
 .form-range:focus {
@@ -2529,17 +2607,14 @@ textarea.form-control-lg {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: #6395EE;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-range::-webkit-slider-thumb {
-    -webkit-transition: none;
     transition: none;
   }
 }
@@ -2558,17 +2633,14 @@ textarea.form-control-lg {
 .form-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   background-color: #6395EE;
   border: 0;
   border-radius: 1rem;
-  -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-range::-moz-range-thumb {
-    -moz-transition: none;
     transition: none;
   }
 }
@@ -2631,16 +2703,9 @@ textarea.form-control-lg {
 .form-floating > .form-control-plaintext {
   padding: 1rem 0.75rem;
 }
-.form-floating > .form-control::-moz-placeholder, .form-floating > .form-control-plaintext::-moz-placeholder {
-  color: transparent;
-}
 .form-floating > .form-control::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
   color: transparent;
-}
-.form-floating > .form-control:not(:-moz-placeholder), .form-floating > .form-control-plaintext:not(:-moz-placeholder) {
-  padding-top: 1.625rem;
-  padding-bottom: 0.625rem;
 }
 .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
 .form-floating > .form-control-plaintext:focus,
@@ -2658,9 +2723,6 @@ textarea.form-control-lg {
   padding-bottom: 0.625rem;
   padding-left: 0.75rem;
 }
-.form-floating > .form-control:not(:-moz-placeholder) ~ label {
-  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-}
 .form-floating > .form-control:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
@@ -2669,15 +2731,6 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control:-webkit-autofill ~ label {
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-}
-.form-floating > textarea:not(:-moz-placeholder) ~ label::after {
-  position: absolute;
-  inset: 1rem 0.375rem;
-  z-index: -1;
-  height: 1.5em;
-  content: "";
-  background-color: var(--bs-body-bg);
-  border-radius: var(--bs-border-radius);
 }
 .form-floating > textarea:focus ~ label::after,
 .form-floating > textarea:not(:placeholder-shown) ~ label::after {
@@ -2998,9 +3051,7 @@ textarea.form-control-lg {
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
   background-color: var(--bs-btn-bg);
@@ -5385,9 +5436,7 @@ textarea.form-control-lg {
 }
 .btn-close:disabled, .btn-close.disabled {
   pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   opacity: var(--bs-btn-close-disabled-opacity);
 }
 
@@ -5442,7 +5491,6 @@ textarea.form-control-lg {
   --bs-toast-zindex: 1090;
   position: absolute;
   z-index: var(--bs-toast-zindex);
-  width: -moz-max-content;
   width: max-content;
   max-width: 100%;
   pointer-events: none;
@@ -6827,17 +6875,14 @@ textarea.form-control-lg {
   }
 }
 .placeholder-wave {
-  -webkit-mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
-          mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
-  -webkit-mask-size: 200% 100%;
-          mask-size: 200% 100%;
+  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
+  mask-size: 200% 100%;
   animation: placeholder-wave 2s linear infinite;
 }
 
 @keyframes placeholder-wave {
   100% {
-    -webkit-mask-position: -200% 0%;
-            mask-position: -200% 0%;
+    mask-position: -200% 0%;
   }
 }
 .clearfix::after {
@@ -7214,28 +7259,23 @@ textarea.form-control-lg {
 }
 
 .object-fit-contain {
-  -o-object-fit: contain !important;
-     object-fit: contain !important;
+  object-fit: contain !important;
 }
 
 .object-fit-cover {
-  -o-object-fit: cover !important;
-     object-fit: cover !important;
+  object-fit: cover !important;
 }
 
 .object-fit-fill {
-  -o-object-fit: fill !important;
-     object-fit: fill !important;
+  object-fit: fill !important;
 }
 
 .object-fit-scale {
-  -o-object-fit: scale-down !important;
-     object-fit: scale-down !important;
+  object-fit: scale-down !important;
 }
 
 .object-fit-none {
-  -o-object-fit: none !important;
-     object-fit: none !important;
+  object-fit: none !important;
 }
 
 .opacity-0 {
@@ -8315,33 +8355,27 @@ textarea.form-control-lg {
 }
 
 .column-gap-0 {
-  -moz-column-gap: 0 !important;
-       column-gap: 0 !important;
+  column-gap: 0 !important;
 }
 
 .column-gap-1 {
-  -moz-column-gap: 0.25rem !important;
-       column-gap: 0.25rem !important;
+  column-gap: 0.25rem !important;
 }
 
 .column-gap-2 {
-  -moz-column-gap: 0.5rem !important;
-       column-gap: 0.5rem !important;
+  column-gap: 0.5rem !important;
 }
 
 .column-gap-3 {
-  -moz-column-gap: 1rem !important;
-       column-gap: 1rem !important;
+  column-gap: 1rem !important;
 }
 
 .column-gap-4 {
-  -moz-column-gap: 1.5rem !important;
-       column-gap: 1.5rem !important;
+  column-gap: 1.5rem !important;
 }
 
 .column-gap-5 {
-  -moz-column-gap: 3rem !important;
-       column-gap: 3rem !important;
+  column-gap: 3rem !important;
 }
 
 .font-monospace {
@@ -8897,21 +8931,15 @@ textarea.form-control-lg {
 }
 
 .user-select-all {
-  -webkit-user-select: all !important;
-     -moz-user-select: all !important;
-          user-select: all !important;
+  user-select: all !important;
 }
 
 .user-select-auto {
-  -webkit-user-select: auto !important;
-     -moz-user-select: auto !important;
-          user-select: auto !important;
+  user-select: auto !important;
 }
 
 .user-select-none {
-  -webkit-user-select: none !important;
-     -moz-user-select: none !important;
-          user-select: none !important;
+  user-select: none !important;
 }
 
 .pe-none {
@@ -9177,24 +9205,19 @@ textarea.form-control-lg {
     float: none !important;
   }
   .object-fit-sm-contain {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    object-fit: contain !important;
   }
   .object-fit-sm-cover {
-    -o-object-fit: cover !important;
-       object-fit: cover !important;
+    object-fit: cover !important;
   }
   .object-fit-sm-fill {
-    -o-object-fit: fill !important;
-       object-fit: fill !important;
+    object-fit: fill !important;
   }
   .object-fit-sm-scale {
-    -o-object-fit: scale-down !important;
-       object-fit: scale-down !important;
+    object-fit: scale-down !important;
   }
   .object-fit-sm-none {
-    -o-object-fit: none !important;
-       object-fit: none !important;
+    object-fit: none !important;
   }
   .d-sm-inline {
     display: inline !important;
@@ -9694,28 +9717,22 @@ textarea.form-control-lg {
     row-gap: 3rem !important;
   }
   .column-gap-sm-0 {
-    -moz-column-gap: 0 !important;
-         column-gap: 0 !important;
+    column-gap: 0 !important;
   }
   .column-gap-sm-1 {
-    -moz-column-gap: 0.25rem !important;
-         column-gap: 0.25rem !important;
+    column-gap: 0.25rem !important;
   }
   .column-gap-sm-2 {
-    -moz-column-gap: 0.5rem !important;
-         column-gap: 0.5rem !important;
+    column-gap: 0.5rem !important;
   }
   .column-gap-sm-3 {
-    -moz-column-gap: 1rem !important;
-         column-gap: 1rem !important;
+    column-gap: 1rem !important;
   }
   .column-gap-sm-4 {
-    -moz-column-gap: 1.5rem !important;
-         column-gap: 1.5rem !important;
+    column-gap: 1.5rem !important;
   }
   .column-gap-sm-5 {
-    -moz-column-gap: 3rem !important;
-         column-gap: 3rem !important;
+    column-gap: 3rem !important;
   }
   .text-sm-start {
     text-align: left !important;
@@ -9738,24 +9755,19 @@ textarea.form-control-lg {
     float: none !important;
   }
   .object-fit-md-contain {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    object-fit: contain !important;
   }
   .object-fit-md-cover {
-    -o-object-fit: cover !important;
-       object-fit: cover !important;
+    object-fit: cover !important;
   }
   .object-fit-md-fill {
-    -o-object-fit: fill !important;
-       object-fit: fill !important;
+    object-fit: fill !important;
   }
   .object-fit-md-scale {
-    -o-object-fit: scale-down !important;
-       object-fit: scale-down !important;
+    object-fit: scale-down !important;
   }
   .object-fit-md-none {
-    -o-object-fit: none !important;
-       object-fit: none !important;
+    object-fit: none !important;
   }
   .d-md-inline {
     display: inline !important;
@@ -10255,28 +10267,22 @@ textarea.form-control-lg {
     row-gap: 3rem !important;
   }
   .column-gap-md-0 {
-    -moz-column-gap: 0 !important;
-         column-gap: 0 !important;
+    column-gap: 0 !important;
   }
   .column-gap-md-1 {
-    -moz-column-gap: 0.25rem !important;
-         column-gap: 0.25rem !important;
+    column-gap: 0.25rem !important;
   }
   .column-gap-md-2 {
-    -moz-column-gap: 0.5rem !important;
-         column-gap: 0.5rem !important;
+    column-gap: 0.5rem !important;
   }
   .column-gap-md-3 {
-    -moz-column-gap: 1rem !important;
-         column-gap: 1rem !important;
+    column-gap: 1rem !important;
   }
   .column-gap-md-4 {
-    -moz-column-gap: 1.5rem !important;
-         column-gap: 1.5rem !important;
+    column-gap: 1.5rem !important;
   }
   .column-gap-md-5 {
-    -moz-column-gap: 3rem !important;
-         column-gap: 3rem !important;
+    column-gap: 3rem !important;
   }
   .text-md-start {
     text-align: left !important;
@@ -10299,24 +10305,19 @@ textarea.form-control-lg {
     float: none !important;
   }
   .object-fit-lg-contain {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    object-fit: contain !important;
   }
   .object-fit-lg-cover {
-    -o-object-fit: cover !important;
-       object-fit: cover !important;
+    object-fit: cover !important;
   }
   .object-fit-lg-fill {
-    -o-object-fit: fill !important;
-       object-fit: fill !important;
+    object-fit: fill !important;
   }
   .object-fit-lg-scale {
-    -o-object-fit: scale-down !important;
-       object-fit: scale-down !important;
+    object-fit: scale-down !important;
   }
   .object-fit-lg-none {
-    -o-object-fit: none !important;
-       object-fit: none !important;
+    object-fit: none !important;
   }
   .d-lg-inline {
     display: inline !important;
@@ -10816,28 +10817,22 @@ textarea.form-control-lg {
     row-gap: 3rem !important;
   }
   .column-gap-lg-0 {
-    -moz-column-gap: 0 !important;
-         column-gap: 0 !important;
+    column-gap: 0 !important;
   }
   .column-gap-lg-1 {
-    -moz-column-gap: 0.25rem !important;
-         column-gap: 0.25rem !important;
+    column-gap: 0.25rem !important;
   }
   .column-gap-lg-2 {
-    -moz-column-gap: 0.5rem !important;
-         column-gap: 0.5rem !important;
+    column-gap: 0.5rem !important;
   }
   .column-gap-lg-3 {
-    -moz-column-gap: 1rem !important;
-         column-gap: 1rem !important;
+    column-gap: 1rem !important;
   }
   .column-gap-lg-4 {
-    -moz-column-gap: 1.5rem !important;
-         column-gap: 1.5rem !important;
+    column-gap: 1.5rem !important;
   }
   .column-gap-lg-5 {
-    -moz-column-gap: 3rem !important;
-         column-gap: 3rem !important;
+    column-gap: 3rem !important;
   }
   .text-lg-start {
     text-align: left !important;
@@ -10860,24 +10855,19 @@ textarea.form-control-lg {
     float: none !important;
   }
   .object-fit-xl-contain {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    object-fit: contain !important;
   }
   .object-fit-xl-cover {
-    -o-object-fit: cover !important;
-       object-fit: cover !important;
+    object-fit: cover !important;
   }
   .object-fit-xl-fill {
-    -o-object-fit: fill !important;
-       object-fit: fill !important;
+    object-fit: fill !important;
   }
   .object-fit-xl-scale {
-    -o-object-fit: scale-down !important;
-       object-fit: scale-down !important;
+    object-fit: scale-down !important;
   }
   .object-fit-xl-none {
-    -o-object-fit: none !important;
-       object-fit: none !important;
+    object-fit: none !important;
   }
   .d-xl-inline {
     display: inline !important;
@@ -11377,28 +11367,22 @@ textarea.form-control-lg {
     row-gap: 3rem !important;
   }
   .column-gap-xl-0 {
-    -moz-column-gap: 0 !important;
-         column-gap: 0 !important;
+    column-gap: 0 !important;
   }
   .column-gap-xl-1 {
-    -moz-column-gap: 0.25rem !important;
-         column-gap: 0.25rem !important;
+    column-gap: 0.25rem !important;
   }
   .column-gap-xl-2 {
-    -moz-column-gap: 0.5rem !important;
-         column-gap: 0.5rem !important;
+    column-gap: 0.5rem !important;
   }
   .column-gap-xl-3 {
-    -moz-column-gap: 1rem !important;
-         column-gap: 1rem !important;
+    column-gap: 1rem !important;
   }
   .column-gap-xl-4 {
-    -moz-column-gap: 1.5rem !important;
-         column-gap: 1.5rem !important;
+    column-gap: 1.5rem !important;
   }
   .column-gap-xl-5 {
-    -moz-column-gap: 3rem !important;
-         column-gap: 3rem !important;
+    column-gap: 3rem !important;
   }
   .text-xl-start {
     text-align: left !important;
@@ -11421,24 +11405,19 @@ textarea.form-control-lg {
     float: none !important;
   }
   .object-fit-xxl-contain {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    object-fit: contain !important;
   }
   .object-fit-xxl-cover {
-    -o-object-fit: cover !important;
-       object-fit: cover !important;
+    object-fit: cover !important;
   }
   .object-fit-xxl-fill {
-    -o-object-fit: fill !important;
-       object-fit: fill !important;
+    object-fit: fill !important;
   }
   .object-fit-xxl-scale {
-    -o-object-fit: scale-down !important;
-       object-fit: scale-down !important;
+    object-fit: scale-down !important;
   }
   .object-fit-xxl-none {
-    -o-object-fit: none !important;
-       object-fit: none !important;
+    object-fit: none !important;
   }
   .d-xxl-inline {
     display: inline !important;
@@ -11938,28 +11917,22 @@ textarea.form-control-lg {
     row-gap: 3rem !important;
   }
   .column-gap-xxl-0 {
-    -moz-column-gap: 0 !important;
-         column-gap: 0 !important;
+    column-gap: 0 !important;
   }
   .column-gap-xxl-1 {
-    -moz-column-gap: 0.25rem !important;
-         column-gap: 0.25rem !important;
+    column-gap: 0.25rem !important;
   }
   .column-gap-xxl-2 {
-    -moz-column-gap: 0.5rem !important;
-         column-gap: 0.5rem !important;
+    column-gap: 0.5rem !important;
   }
   .column-gap-xxl-3 {
-    -moz-column-gap: 1rem !important;
-         column-gap: 1rem !important;
+    column-gap: 1rem !important;
   }
   .column-gap-xxl-4 {
-    -moz-column-gap: 1.5rem !important;
-         column-gap: 1.5rem !important;
+    column-gap: 1.5rem !important;
   }
   .column-gap-xxl-5 {
-    -moz-column-gap: 3rem !important;
-         column-gap: 3rem !important;
+    column-gap: 3rem !important;
   }
   .text-xxl-start {
     text-align: left !important;
@@ -12020,3 +11993,5 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
