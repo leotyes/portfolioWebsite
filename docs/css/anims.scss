@@ -48,8 +48,8 @@ $barsize: 100px;
     margin-bottom: 0em;
     padding: 2em 0;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
 
         content: "";
         position: absolute;
@@ -61,14 +61,14 @@ $barsize: 100px;
 
     }
 
-    &:before {
+    &::before {
         background: linear-gradient( 90deg, $bg 0%, $bg 50%, transparent 50%, transparent 100% );
         background-size: $barsize;
         background-position: center;
         z-index: 1;
     }
 
-    &:after {
+    &::after {
 
         transition: opacity 0.3s ease, animation 0.3s ease;
 
@@ -101,7 +101,9 @@ $barsize: 100px;
 }
 
 .hr.anim {
-    &:before {
+    --animation-duration: 120s;
+
+    &::before {
         background: linear-gradient( 
             90deg, 
             $bg 0%, $bg 5%, 
@@ -128,9 +130,10 @@ $barsize: 100px;
         background-size: $barsize * 10;
         background-position: center;
         z-index: 1;
-        animation: bar 120s linear infinite;
+        animation: bar var(--animation-duration) linear infinite;
     }
 }
+
 .rectangle-picture-frame-animate-once {
     animation: fadeInUp 1s ease forwards;
     .rectangle-picture-frame {

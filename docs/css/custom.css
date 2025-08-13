@@ -67,4 +67,9 @@ hr.navbar-gradient {
     color: #696B89FF !important;
 }
 
+.card-padding {
+    padding-top: 6rem !important;
+    padding-bottom: 8rem !important;
+}
+
 /* swing for hovering over card and jack in the box for card entrance */
