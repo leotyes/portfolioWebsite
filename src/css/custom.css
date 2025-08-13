@@ -1,5 +1,15 @@
 .title-padding {
-    padding: 8rem !important;
+    padding-left: 8rem !important;
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+    padding-right: 4rem !important;
+}
+
+@media (max-width: 1400px) {
+    .title-padding {
+        padding: 2rem !important;
+        text-align: center;
+    }
 }
 
 .title-font {
@@ -55,6 +65,11 @@ hr.navbar-gradient {
 
 .description-text {
     color: #696B89FF !important;
+}
+
+.card-padding {
+    padding-top: 6rem !important;
+    padding-bottom: 8rem !important;
 }
 
 /* swing for hovering over card and jack in the box for card entrance */

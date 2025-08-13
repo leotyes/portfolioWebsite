@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ../portfolioWebsite/src/copyToDocs.js"
+    "build": "node ../portfolioWebsite/src/build/copyToDocs.js"
   },
   "repository": {
     "type": "git",

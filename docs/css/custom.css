@@ -1,5 +1,15 @@
 .title-padding {
-    padding: 8rem !important;
+    padding-left: 8rem !important;
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+    padding-right: 4rem !important;
+}
+
+@media (max-width: 1400px) {
+    .title-padding {
+        padding: 2rem !important;
+        text-align: center;
+    }
 }
 
 .title-font {

@@ -20,6 +20,16 @@
     transform: scale3d(1, 1, 1);
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 .hr {
   width: 100%;
   height: 2px;
@@ -66,7 +76,10 @@
   animation: bar 120s linear infinite;
 }
 
-.rectangle-picture-frame {
+.rectangle-picture-frame-animate-once {
+  animation: fadeInUp 1s ease forwards;
+}
+.rectangle-picture-frame-animate-once .rectangle-picture-frame {
   position: relative;
   width: 300px;
   height: 400px;
@@ -74,7 +87,7 @@
   z-index: 0;
   overflow: hidden;
 }
-.rectangle-picture-frame .image-container {
+.rectangle-picture-frame-animate-once .rectangle-picture-frame .image-container {
   position: absolute;
   top: 6px;
   left: 6px;
@@ -82,13 +95,21 @@
   bottom: 6px;
   z-index: 1;
 }
-.rectangle-picture-frame .image-container img {
+.rectangle-picture-frame-animate-once .rectangle-picture-frame .image-container img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-.rectangle-picture-frame::before, .rectangle-picture-frame::after {
+@media (max-width: 1400px) {
+  .rectangle-picture-frame-animate-once .rectangle-picture-frame {
+    width: 100%;
+    min-width: 300px;
+    max-width: 300px;
+    height: 400px;
+    margin: 0 auto;
+  }
+}
+.rectangle-picture-frame-animate-once .rectangle-picture-frame::before, .rectangle-picture-frame-animate-once .rectangle-picture-frame::after {
   content: "";
   position: absolute;
   top: -6px;
@@ -100,14 +121,11 @@
   z-index: -1;
   animation: cardAnimate 10s linear alternate infinite;
 }
-.rectangle-picture-frame:hover {
-  animation: pulse 500ms ease-in-out infinite;
+.rectangle-picture-frame-animate-once .rectangle-picture-frame:hover {
+  animation: pulse 1s ease-in-out infinite;
 }
-.rectangle-picture-frame:hover::before, .rectangle-picture-frame:hover::after {
+.rectangle-picture-frame-animate-once .rectangle-picture-frame:hover::before, .rectangle-picture-frame-animate-once .rectangle-picture-frame:hover::after {
   animation-duration: 5s;
-}
-.rectangle-picture-frame:not(:hover) {
-  animation: none;
 }
 
 .special-link {
@@ -137,3 +155,5 @@
 .special-link:hover::after {
   animation-duration: 10s;
 }
+
+/*# sourceMappingURL=anims.css.map */

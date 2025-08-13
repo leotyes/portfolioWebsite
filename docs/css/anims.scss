@@ -27,6 +27,18 @@ $barsize: 100px;
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .hr {
     
     width: 100%;
@@ -119,62 +131,68 @@ $barsize: 100px;
         animation: bar 120s linear infinite;
     }
 }
+.rectangle-picture-frame-animate-once {
+    animation: fadeInUp 1s ease forwards;
+    .rectangle-picture-frame {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background: #10111F;
+        z-index: 0;
+        overflow: hidden;
 
-.rectangle-picture-frame {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: #10111F;
-    z-index: 0;
-    overflow: hidden;
+        .image-container {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            z-index: 1;
 
-    .image-container {
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        right: 6px;
-        bottom: 6px;
-        z-index: 1;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
-    }
 
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        top: -6px;
-        left: -6px;
-        background: linear-gradient(
-            45deg,
-            #62EFAB,
-            #F2EA7D,
-            #FF8797,
-            #E1A4F4,
-            #82FFF4,
-            #62EFAB
-        );
-        background-size: 400% 400%;
-        width: calc(100% + 6px);
-        height: calc(100% + 6px);
-        z-index: -1;
-        animation: cardAnimate 10s linear alternate infinite;
-    }
+        @media (max-width: 1400px) {
+            width: 100%;
+            min-width: 300px;
+            max-width: 300px;
+            height: 400px;
+            margin: 0 auto;
+        }
 
-    &:hover {
-        animation: pulse 500ms ease-in-out infinite;
         &::before,
         &::after {
-            animation-duration: 5s;
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            background: linear-gradient(
+                45deg,
+                #62EFAB,
+                #F2EA7D,
+                #FF8797,
+                #E1A4F4,
+                #82FFF4,
+                #62EFAB
+            );
+            background-size: 400% 400%;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            z-index: -1;
+            animation: cardAnimate 10s linear alternate infinite;
         }
-    }
 
-    &:not(:hover) {
-        animation: none;
+        &:hover {
+            animation: pulse 1s ease-in-out infinite;
+            &::before,
+            &::after {
+                animation-duration: 5s;
+            }
+        }
     }
 }
 
@@ -222,4 +240,8 @@ $barsize: 100px;
             animation-duration: 10s;
         }
     }
+}
+
+.card-passion {
+    
 }
