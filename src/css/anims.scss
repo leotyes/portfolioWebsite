@@ -39,6 +39,28 @@ $barsize: 100px;
   }
 }
 
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
 .hr {
     
     width: 100%;
@@ -102,6 +124,7 @@ $barsize: 100px;
 
 .hr.anim {
     --animation-duration: 120s;
+    --animation-progress: 0;
 
     &::before {
         background: linear-gradient( 
@@ -131,6 +154,8 @@ $barsize: 100px;
         background-position: center;
         z-index: 1;
         animation: bar var(--animation-duration) linear infinite;
+        animation-play-state: running;
+        background-position-x: var(--animation-progress);
     }
 }
 
@@ -245,6 +270,55 @@ $barsize: 100px;
     }
 }
 
-.card-passion {
-    
+.card-passion-border {
+    position: relative;
+    background: linear-gradient(
+            45deg,
+            #62EFAB,
+            #F2EA7D,
+            #FF8797,
+            #E1A4F4,
+            #82FFF4,
+            #62EFAB
+        );
+    padding: 2px;
+    background-size: 400% 400%;
+    border-radius: 5rem;
+    animation: cardAnimate 10s linear alternate infinite;
+    display: inline-block;
+
+    .card-passion {
+        border-radius: 5rem;
+        background: #10111F;
+        border: none;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover {
+        animation: swing .75s ease-in-out;
+    }
+}
+
+.card-passion .card-img-top {
+  border-radius: 5rem;
+  width: 100%;
+  display: block;
+}
+
+.technical-grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+
+.technical-grid-cell {
+    height: 5rem;
+    border-radius: 5rem;
+    background-color: #10111F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

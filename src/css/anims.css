@@ -30,6 +30,23 @@
     transform: translate3d(0, 0, 0);
   }
 }
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
 .hr {
   width: 100%;
   height: 2px;
@@ -70,6 +87,7 @@
 
 .hr.anim {
   --animation-duration: 120s;
+  --animation-progress: 0;
 }
 .hr.anim::before {
   background: linear-gradient(90deg, #10111F 0%, #10111F 5%, transparent 5%, transparent 10%, #10111F 10%, #10111F 15%, transparent 15%, transparent 20%, #10111F 20%, #10111F 25%, transparent 25%, transparent 30%, #10111F 30%, #10111F 35%, transparent 35%, transparent 40%, #10111F 40%, #10111F 45%, transparent 45%, transparent 50%, #10111F 50%, #10111F 55%, transparent 55%, transparent 60%, #10111F 60%, #10111F 65%, transparent 65%, transparent 70%, #10111F 70%, #10111F 75%, transparent 75%, transparent 80%, #10111F 80%, #10111F 85%, transparent 85%, transparent 90%, #10111F 90%, #10111F 95%, transparent 95%, transparent 100%);
@@ -77,6 +95,8 @@
   background-position: center;
   z-index: 1;
   animation: bar var(--animation-duration) linear infinite;
+  animation-play-state: running;
+  background-position-x: var(--animation-progress);
 }
 
 .rectangle-picture-frame-animate-once {
@@ -158,4 +178,47 @@
 }
 .special-link:hover::after {
   animation-duration: 10s;
+}
+
+.card-passion-border {
+  position: relative;
+  background: linear-gradient(45deg, #62EFAB, #F2EA7D, #FF8797, #E1A4F4, #82FFF4, #62EFAB);
+  padding: 2px;
+  background-size: 400% 400%;
+  border-radius: 5rem;
+  animation: cardAnimate 10s linear alternate infinite;
+  display: inline-block;
+}
+.card-passion-border .card-passion {
+  border-radius: 5rem;
+  background: #10111F;
+  border: none;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.card-passion-border:hover {
+  animation: swing 0.75s ease-in-out;
+}
+
+.card-passion .card-img-top {
+  border-radius: 5rem;
+  width: 100%;
+  display: block;
+}
+
+.technical-grid-container {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.technical-grid-cell {
+  height: 5rem;
+  border-radius: 5rem;
+  background-color: #10111F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

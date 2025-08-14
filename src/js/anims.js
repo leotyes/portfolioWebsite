@@ -9,13 +9,15 @@ function debounce(func, wait) {
 window.addEventListener("scroll", function() {
     const hrAnims = document.getElementsByClassName("hr anim")
     Array.from(hrAnims).forEach( element => {
-        element.style.setProperty("--animation-duration", "20s")
+        const style = this.getComputedStyle(element)
+        const currentPosition = style.getPropertyValue("--animation-progress") || "0"
+
+        element.style.setProperty("--animation-duration", "6s")
     })
 
     debounce(() => {
         Array.from(hrAnims).forEach(element => {
-            element.style.setProperty("--animation-duration", "120s");
-
+            element.style.setProperty("--animation-duration", "60s");
         });
     }, 150)()
 })
