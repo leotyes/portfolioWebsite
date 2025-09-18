@@ -281,14 +281,17 @@ $barsize: 100px;
             #82FFF4,
             #62EFAB
         );
-    padding: 2px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    padding-right: 2px;
+    padding-left: 2px;
     background-size: 400% 400%;
-    border-radius: 5rem;
+    border-radius: 1rem;
     animation: cardAnimate 10s linear alternate infinite;
     display: inline-block;
 
     .card-passion {
-        border-radius: 5rem;
+        border-radius: 1rem;
         background: #10111F;
         border: none;
         margin: 0;
@@ -297,12 +300,12 @@ $barsize: 100px;
     }
 
     &:hover {
-        animation: swing .75s ease-in-out;
+        // animation: swing .75s ease-in-out;
     }
 }
 
 .card-passion .card-img-top {
-  border-radius: 5rem;
+  border-radius: 1rem;
   width: 100%;
   display: block;
 }

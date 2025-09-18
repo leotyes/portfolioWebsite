@@ -3,6 +3,10 @@
 
 $primary: #6395EE !default;
 $dark: #10111F;
+$light: #E0E0E0;
 $navbar-dark-color: #696B89;
+$font-family-sans-serif: 'Poppins', Arial, sans-serif;
+$navbar-active-color: #E0E0E0;
+$navbar-disabled-color: #9CA3AF;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

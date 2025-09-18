@@ -1,8 +1,11 @@
 .title-padding {
-    padding-left: 8rem !important;
-    padding-top: 8rem !important;
-    padding-bottom: 8rem !important;
-    padding-right: 4rem !important;
+    padding-top: 9rem !important;
+    padding-bottom: 6rem !important;
+}
+
+.nav-content-padding {
+    padding-left: 8rem;
+    padding-right: 8rem;
 }
 
 @media (max-width: 1400px) {
@@ -13,7 +16,7 @@
 }
 
 .title-font {
-    font-size: 75px !important;
+    font-size: 60px !important;
 }
 
 .hello-font {
@@ -64,11 +67,31 @@ hr.navbar-gradient {
 }
 
 .description-text {
-    color: #696B89FF !important;
+    color: #9CA3AF !important;
+}
+
+.card-text {
+    color: #9CA3AF !important;
+    font-size: 15px !important;
+}
+
+.card-title {
+    font-size: 25px !important;
+}
+
+.card-img-top {
+    max-height: 12vw !important;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-img-top-leaf {
+    object-fit: contain;
+    object-position: top;
 }
 
 .card-padding {
-    padding-top: 6rem !important;
+    padding-top: 2rem !important;
     padding-bottom: 8rem !important;
 }
 

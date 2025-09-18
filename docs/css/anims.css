@@ -121,8 +121,7 @@
 .rectangle-picture-frame-animate-once .rectangle-picture-frame .image-container img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 1400px) {
   .rectangle-picture-frame-animate-once .rectangle-picture-frame {
@@ -183,26 +182,25 @@
 .card-passion-border {
   position: relative;
   background: linear-gradient(45deg, #62EFAB, #F2EA7D, #FF8797, #E1A4F4, #82FFF4, #62EFAB);
-  padding: 2px;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  padding-right: 2px;
+  padding-left: 2px;
   background-size: 400% 400%;
-  border-radius: 5rem;
+  border-radius: 1rem;
   animation: cardAnimate 10s linear alternate infinite;
   display: inline-block;
 }
 .card-passion-border .card-passion {
-  border-radius: 5rem;
+  border-radius: 1rem;
   background: #10111F;
   border: none;
   margin: 0;
   width: 100%;
   height: 100%;
 }
-.card-passion-border:hover {
-  animation: swing 0.75s ease-in-out;
-}
-
 .card-passion .card-img-top {
-  border-radius: 5rem;
+  border-radius: 1rem;
   width: 100%;
   display: block;
 }
@@ -222,3 +220,5 @@
   justify-content: center;
   flex-direction: column;
 }
+
+/*# sourceMappingURL=anims.css.map */

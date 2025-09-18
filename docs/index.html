@@ -6,34 +6,35 @@
     <link href="animate.css/animate.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
     <script src="js/anims.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
   </head>
   <body class="bg-dark">
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
     <main class="animate__animated animate__zoomIn">
       <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-4">
-        <div class="container-fluid">
+        <div class="container-fluid nav-content-padding">
           <span class="navbar-brand mb-0 h1 ms-3 fw-bold fs-3">Leo Tang</span>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link active fw-bold fs-4" href="index.html">Home</a>
-              <a class="nav-link fw-normal fs-4" href="#">Projects</a>
-              <a class="nav-link fw-normal fs-4" href="connect.html">Connect</a>
+              <a class="nav-link active fw-bold fs-5" href="index.html">Home</a>
+              <a class="nav-link fw-normal fs-5" href="#">Projects</a>
+              <a class="nav-link fw-normal fs-5" href="connect.html">Connect</a>
             </div>
           </div>
         </div>
       </nav>
-      <hr class="navbar-gradient">
+      <!-- <hr class="navbar-gradient"> -->
       <div class="container-fluid">
-        <div class="row bg-dark">
-          <div class="col-12 col-xxl-9 title-padding">
-            <h2 class="animate__animated text-light fw-bold fs-1 animate__fadeInLeft">Welcome!</h2>
-            <h1 class="animate__animated text-light fw-bold title-font animate__fadeInLeft animate__slow">I am Leo Tang</h1>
-            <p class="animate__animated text-light title fs-3 description-text animate__fadeInLeft animate__slower mt-3">I am a passionate high school student interested in computer science. Do not hesitate to <a class="special-link" href="connect.html">contact me!</a></p>
+        <div class="row bg-dark justify-content-evenly">
+          <div class="col-12 title-padding justify-content-center mx-auto">
+            <h2 class="animate__animated text-light fs-3 animate__fadeInUp text-center description-text">Welcome, my name is</h2>
+            <h1 class="animate__animated text-light fw-bold title-font animate__fadeInUp animate__slow text-center">Leo Tang</h1>
+            <p class="animate__animated text-light title fs-5 description-text animate__fadeInUp animate__slower mt-2 text-center">I am a passionate high school student interested in computer science.<br>Do not hesitate to <a class="special-link" href="connect.html">contact me!</a></p>
           </div>
-          <div class="col-12 col-xxl-3 title-padding">
+          <!-- <div class="col-12 col-xxl-3 title-padding">
             <div class="rectangle-picture-frame-animate-once">
               <div class="rectangle-picture-frame">
                 <div class="image-container">
@@ -43,50 +44,50 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
-        <b class="hr anim"></b>
+        <!-- <b class="hr anim"></b> -->
         <div class="row bg-dark">
           <div class="col-12">
-            <h2 class="animate__animated text-light fw-bold fs-1 animate__fadeInLeft mt-5 text-center">My Passions</h2>
+            <h2 class="animate__animated text-light fw-bold fs-2 animate__fadeInUp text-center">My Projects</h2>
           </div>
         </div>
         <div class="row bg-dark justify-content-evenly card-padding">
           <div class="col-3 d-flex justify-content-center align-items-center flex-column text-center animate__animated animate__jackInTheBox animate__slower">
-            <div class="card-passion-border">
+            <div class="card-passion-border h-100 w-100">
               <div class="card card-passion bg-dark">
-                <img class="card-img-top" src="pictures/linDanJumpSmash.webp">
+                <img class="card-img-top" src="pictures/StudyLocal.jpeg" >
                 <div class="card-body">
-                  <h5 class="card-title text-light fs-1">Badminton</h5>
-                  <p class="card-text description-text fs-4">I will finish this later.</p>
+                  <h5 class="card-title text-light fs-5">StudyLocal</h5>
+                  <p class="card-text">Finds optimal studying locations using Google Places API based on several factors, including distance, internet availability, and review analysis. Made at Ignition Hacks v.6.</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-3 d-flex justify-content-center align-items-center flex-column text-center animate__animated animate__jackInTheBox">
-            <div class="card-passion-border">
+            <div class="card-passion-border h-100 w-100">
               <div class="card card-passion bg-dark">
-                <img class="card-img-top" src="pictures/linDanJumpSmash.webp">
+                <img class="card-img-top card-img-top-leaf" src="pictures/LeafMockupPreview.png">
                 <div class="card-body">
-                  <h5 class="card-title text-light fs-1">Badminton</h5>
-                  <p class="card-text description-text fs-4">I will finish this later.</p>
+                  <h5 class="card-title text-light fs-3">Leaf</h5>
+                  <p class="card-text description-text fs-4">Todo list that helps users manage tasks with time- and location-based reminders. Built with Kotlin and XML in Android Studio, using the MVVM architecture.</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-3 d-flex justify-content-center align-items-center flex-column text-center animate__animated animate__jackInTheBox">
-            <div class="card-passion-border">
+            <div class="card-passion-border h-100 w-100">
               <div class="card card-passion bg-dark">
-                <img class="card-img-top" src="pictures/linDanJumpSmash.webp">
+                <img class="card-img-top" src="pictures/PortfolioWebsitePreview.jpeg">
                 <div class="card-body">
-                  <h5 class="card-title text-light fs-1">Badminton</h5>
-                  <p class="card-text description-text fs-4">I will finish this later.</p>
+                  <h5 class="card-title text-light fs-3">Portfolio Website</h5>
+                  <p class="card-text description-text fs-4">You're on it right now.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <b class="hr anim"></b>
+        <!-- <b class="hr anim"></b> -->
         <div class="row bg-dark">
           <div class="col-12">
             <h2 class="animate__animated text-light fw-bold fs-1 animate__fadeInLeft mt-5 text-center">Technical Skills</h2>
