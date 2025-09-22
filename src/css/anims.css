@@ -272,14 +272,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/PythonLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 3.5vh;
-  margin-bottom: 3.5vh;
   margin-left: 1vw;
   transition: opacity 0.25s;
 }
@@ -293,14 +291,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/CPPLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
   margin-left: 1vw;
   transition: opacity 0.25s;
 }
@@ -314,14 +310,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/HTMLLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
   margin-left: 1vw;
   transition: opacity 0.25s;
 }
@@ -335,14 +329,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/JSLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
   margin-left: 1vw;
   transition: opacity 0.25s;
 }
@@ -356,14 +348,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/CSSLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
   margin-left: 1.5vw;
   transition: opacity 0.25s;
 }
@@ -377,14 +367,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/KotlinLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
   margin-left: 1.5vw;
   transition: opacity 0.25s;
 }
@@ -398,14 +386,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/AndroidStudioLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
   margin-left: 1.5vw;
   transition: opacity 0.25s;
 }
@@ -419,14 +405,12 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/GitLogo.png");
-  background-size: contain;
+  background-size: clamp(48px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
   pointer-events: none;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
   margin-left: 1.5vw;
   transition: opacity 0.25s;
 }
