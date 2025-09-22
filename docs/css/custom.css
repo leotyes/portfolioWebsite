@@ -1,5 +1,5 @@
 .title-padding {
-    padding-top: 9rem !important;
+    padding-top: 28vh !important;
     padding-bottom: 6rem !important;
 }
 
@@ -90,9 +90,32 @@ hr.navbar-gradient {
     object-position: top;
 }
 
-.card-padding {
-    padding-top: 2rem !important;
-    padding-bottom: 8rem !important;
+.technical-card-padding {
+    padding-top: 4em !important;
+    padding-bottom: 3em !important;
 }
 
+.img-crop {
+  object-fit: cover;
+  object-position: center;
+  width: 50%;
+  height: 25rem;
+  border-radius: .75rem;
+}
+
+#hero {
+    min-height: 90vh;
+}
+
+.following-items {
+    max-width: 1750px;
+}
+
+.technical-skills-grid-padding {
+    max-width: 80vw;
+}
+
+.about-text {
+    line-height: 2em;
+}
 /* swing for hovering over card and jack in the box for card entrance */

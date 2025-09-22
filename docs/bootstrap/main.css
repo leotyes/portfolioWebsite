@@ -10,6 +10,24 @@
     background-position: 0% 50%;
   }
 }
+@keyframes technicalHover {
+  from {
+    transform: scale3d(1, 1, 1);
+    background-color: rgba(16, 17, 31, 0);
+  }
+  to {
+    transform: scale3d(1.25, 1.25, 1.25);
+    background-color: #1a1b2a;
+  }
+}
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
 @keyframes pulse {
   from {
     transform: scale3d(1, 1, 1);
@@ -200,6 +218,25 @@
   width: 100%;
   height: 100%;
 }
+.card-about-border {
+  position: relative;
+  background: rgba(224, 224, 224, 0);
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  padding-right: 2.25px;
+  padding-left: 2.25px;
+  background-size: 400% 400%;
+  border-radius: 1rem;
+  display: inline-block;
+}
+.card-about-border .card-about {
+  border-radius: 1rem;
+  background: #10111F;
+  border: none;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
 .card-passion .card-img-top {
   border-radius: 1rem;
   width: 100%;
@@ -210,16 +247,193 @@
   display: grid !important;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .technical-grid-cell {
+  transition: transform 0.25s, background-color 0.25s;
   height: 5rem;
-  border-radius: 5rem;
+  border-radius: 1rem;
   background-color: #10111F;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  max-width: 24em;
+  width: 100%;
+}
+.technical-grid-cell:hover {
+  transform: scale3d(1.25, 1.25, 1.25);
+  background-color: #1a1b2a;
+}
+
+.technical-grid-cell.python::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/PythonLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
+  margin-left: 1vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.python:hover::before {
+  opacity: 0.15;
+}
+
+.technical-grid-cell.cpp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/CPPLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-left: 1vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.cpp:hover::before {
+  opacity: 0.15;
+}
+
+.technical-grid-cell.html::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/HTMLLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-left: 1vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.html:hover::before {
+  opacity: 0.15;
+}
+
+.technical-grid-cell.js::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/JSLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  margin-left: 1vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.js:hover::before {
+  opacity: 0.15;
+}
+
+.technical-grid-cell.css::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/CSSLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  margin-left: 1.5vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.css:hover::before {
+  opacity: 0.15;
+}
+
+.technical-grid-cell.kotlin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/KotlinLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  margin-left: 1.5vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.kotlin:hover::before {
+  opacity: 0.15;
+}
+
+.technical-grid-cell.androidstudio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/AndroidStudioLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-left: 1.5vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.androidstudio:hover::before {
+  opacity: 0.15;
+}
+
+.technical-grid-cell.git::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../pictures/GitLogo.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  margin-left: 1.5vw;
+  transition: opacity 0.25s;
+}
+
+.technical-grid-cell.git:hover::before {
+  opacity: 0.15;
 }
 
 /*!
