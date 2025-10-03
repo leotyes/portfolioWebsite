@@ -172,6 +172,20 @@ html {
 	text-decoration: none;
 }
 
+.social-link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 12px;
+    margin: 0 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.social-link i {
+    display: block;
+}
+
 .wave-container {
 	flex-shrink: 0;
 	height: 30vh;
@@ -180,6 +194,7 @@ html {
 	left: 0;
 	right: 0;
 	min-height: 100px;
+    pointer-events: none;
 }
 
 .following-items {
