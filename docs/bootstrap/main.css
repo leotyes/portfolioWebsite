@@ -238,7 +238,6 @@
   height: 100%;
 }
 .card-passion .card-img-top {
-  border-radius: 1rem;
   width: 100%;
   display: block;
 }
@@ -273,7 +272,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/PythonLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -292,7 +291,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/CPPLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -311,7 +310,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/HTMLLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -330,7 +329,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/JSLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -349,7 +348,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/CSSLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -368,7 +367,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/KotlinLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -387,7 +386,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/AndroidStudioLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -406,7 +405,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/GitLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -4718,16 +4717,16 @@ textarea.form-control-lg {
   --bs-card-subtitle-color: ;
   --bs-card-border-width: var(--bs-border-width);
   --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: var(--bs-border-radius);
+  --bs-card-border-radius: 1rem;
   --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  --bs-card-inner-border-radius: calc(1rem - (var(--bs-border-width)));
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: var(--bs-body-bg);
+  --bs-card-bg: #1C1E2F;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;

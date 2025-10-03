@@ -237,7 +237,6 @@
   height: 100%;
 }
 .card-passion .card-img-top {
-  border-radius: 1rem;
   width: 100%;
   display: block;
 }
@@ -272,7 +271,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/PythonLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -291,7 +290,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/CPPLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -310,7 +309,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/HTMLLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 5vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -329,7 +328,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/JSLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -348,7 +347,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/CSSLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -367,7 +366,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/KotlinLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -386,7 +385,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/AndroidStudioLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;
@@ -405,7 +404,7 @@
   position: absolute;
   inset: 0;
   background-image: url("../pictures/GitLogo.png");
-  background-size: clamp(48px, 5vw, 72px);
+  background-size: clamp(36px, 4vw, 72px);
   background-position: left;
   background-repeat: no-repeat;
   opacity: 0;

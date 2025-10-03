@@ -1,71 +1,184 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Portfolio | Leo Tang</title>
-        <link href="bootstrap/main.css" rel="stylesheet" />
-        <link href="animate.css/animate.css" rel="stylesheet" />
-        <link href="css/custom.css" rel="stylesheet" />
-        <script src="js/anims.js" defer></script>
-        <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
-    </head>
-    <body class="bg-dark">
-        <script src="bootstrap/bootstrap.bundle.min.js"></script>
-        <main class="animate__animated animate__zoomIn">
-            <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-4">
-                <div class="container-fluid nav-content-padding">
-                    <span class="navbar-brand mb-0 h1 ms-3 fw-bold fs-3">Leo Tang</span>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <div class="navbar-nav ms-auto">
-                            <a class="nav-link fw-normal fs-5" href="index.html">Home</a>
-                            <a class="nav-link fw-normal fs-5 fs-bold active" href="projects.html">Projects</a>
-                            <a class="nav-link fw-normal fs-5" href="connect.html">Connect</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <div class="row bg-dark mb-5">
-                <div class="col-12 mb-5">
-                    <h2 class="animate__animated text-light fw-bold fs-1 animate__fadeInUp text-center mb-5">My Projects</h2>
-                </div>
-            </div>
-            <div class="row bg-dark justify-content-evenly card-padding">
-                <div class="col-3 d-flex justify-content-center align-items-center flex-column text-center animate__animated animate__jackInTheBox">
-                    <div class="card-passion-border h-100 w-100">
-                        <div class="card card-passion bg-dark">
-                            <img class="card-img-top" src="pictures/StudyLocal.jpeg">
-                            <div class="card-body">
-                                <h5 class="card-title text-light fs-5">StudyLocal</h5>
-                                <p class="card-text">Finds optimal studying locations using Google Places API based on several factors, including distance, internet availability, and review analysis. Made at Ignition Hacks v.6.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 d-flex justify-content-center align-items-center flex-column text-center animate__animated animate__jackInTheBox">
-                    <div class="card-about-border h-100 w-100">
-                        <div class="card card-passion bg-dark">
-                            <img class="card-img-top card-img-top-leaf" src="pictures/LeafMockupPreview.png">
-                            <div class="card-body">
-                                <h5 class="card-title text-light fs-3">Leaf</h5>
-                                <p class="card-text description-text fs-4">Todo list that helps users manage tasks with time- and location-based reminders. Built with Kotlin and XML in Android Studio, using the MVVM architecture.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 d-flex justify-content-center align-items-center flex-column text-center animate__animated animate__jackInTheBox">
-                    <div class="card-passion-border h-100 w-100">
-                        <div class="card card-passion bg-dark">
-                            <img class="card-img-top" src="pictures/PortfolioWebsitePreview.jpeg">
-                            <div class="card-body">
-                                <h5 class="card-title text-light fs-3">Portfolio Website</h5>
-                                <p class="card-text description-text fs-4">You're on it right now.</p>
-                            </div>
-                        </div>
+
+<head>
+    <title>Portfolio | Leo Tang</title>
+    <link href="bootstrap/main.css" rel="stylesheet" />
+    <link href="animate.css/animate.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <script src="js/anims.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <main class="animate__animated animate__zoomIn">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-4">
+            <div class="container-fluid nav-content-padding">
+                <span class="navbar-brand mb-0 h1 ms-3 fw-bold fs-3">Leo Tang</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link fw-normal fs-5" href="index.html">Home</a>
+                        <a class="nav-link fw-normal fs-5 fs-bold active" href="projects.html">Projects</a>
+                        <a class="nav-link fw-normal fs-5" href="connect.html">Connect</a>
                     </div>
                 </div>
             </div>
-        </main>
-    </body>
+        </nav>
+        <div class="row bg-dark mb-5 mt-5">
+            <div class="col-12 mb-5">
+                <h2 class="animate__animated text-light fw-bold fs-1 animate__fadeInUp text-center">My Projects</h2>
+            </div>
+        </div>
+        <div class="row bg-dark justify-content-evenly card-padding mb-5">
+            <div
+                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
+                <div class="card border-primary card-passion h-100 w-100 project-shadow">
+                    <img class="card-img-top bg-dark px-4 py-4" src="pictures/StudyLocal.jpeg">
+                    <div class="card-body">
+                        <div class="tech-icons-container mb-2 ms-2">
+                            <img src="pictures/HTMLIcon.png">
+                            <img src="pictures/CSSIcon.png">
+                            <img src="pictures/JSIcon.png">
+                        </div>
+                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">StudyLocal</h5>
+                        <p class="card-text ms-2 project-text mb-1">Finds optimal studying locations using Google Places
+                            API based on
+                            several factors, including distance, internet availability, and review analysis. Made at
+                            Ignition Hacks v.6.</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
+                <div class="card border-primary card-passion h-100 w-100 project-shadow">
+                    <img class="card-img-top bg-dark svg px-4 py-4" src="pictures/LeafMockupPreview.png">
+                    <div class="card-body">
+                        <div class="tech-icons-container mb-2 ms-2">
+                            <img src="pictures/AndroidStudioIcon.png">
+                            <img src="pictures/KotlinIcon.png">
+                        </div>
+                        <h5 class="card-title text-light fs-3 ms-2 project-text-title">Leaf</h5>
+                        <p class="card-text ms-2 project-text mb-1">Todo list that helps users manage tasks with time-
+                            and location-based
+                            reminders. Built with Kotlin and XML in Android Studio, using the MVVM architecture.</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
+                <div class="card border-primary card-passion h-100 w-100 project-shadow">
+                    <img class="card-img-top bg-dark px-4 py-4" src="pictures/PortfolioWebsitePreview.jpeg">
+                    <div class="card-body">
+                        <div class="tech-icons-container mb-2 ms-2">
+                            <img src="pictures/HTMLIcon.png">
+                            <img src="pictures/CSSIcon.png">
+                            <img src="pictures/JSIcon.png">
+                        </div>
+                        <h5 class="card-title text-light fs-3 ms-2 project-text-title">Portfolio Website</h5>
+                        <p class="card-text ms-2 project-text mb-1">Used Bootstrap to create a simple introduction
+                            website. I am not a professional UI designer in case you couldn't tell already. You're on it
+                            right now.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row bg-dark justify-content-evenly card-padding mb-5 mt-5">
+            <div
+                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
+                <div class="card border-primary card-passion h-100 w-100 project-shadow">
+                    <img class="card-img-top bg-dark svg" src="pictures/DMOJLogo.svg">
+                    <div class="card-body">
+                        <div class="tech-icons-container mb-2 ms-2">
+                            <img src="pictures/PythonIcon.png">
+                            <img src="pictures/CPPIcon.png">
+                        </div>
+                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">Competitive Programming</h5>
+                        <p class="card-text ms-2 project-text mb-1">Solved several competitive programming problems on
+                            DMOJ, strengthening my
+                            knowledge of data structures and algorithms. Achieved distinction (top 25%) on CCC Junior.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
+                <div class="card border-primary card-passion h-100 w-100 project-shadow">
+                    <img class="card-img-top bg-dark svg" src="pictures/ComingSoonText.png">
+                    <div class="card-body">
+                        <div class="tech-icons-container mb-2 ms-2">
+                            <img src="pictures/QuestionIcon.png">
+                        </div>
+                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">Coming Soon</h5>
+                        <p class="card-text ms-2 project-text mb-1">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
+                <div class="card border-primary card-passion h-100 w-100 project-shadow">
+                    <img class="card-img-top bg-dark svg" src="pictures/ComingSoonText.png">
+                    <div class="card-body">
+                        <div class="tech-icons-container mb-2 ms-2">
+                            <img src="pictures/QuestionIcon.png">
+                        </div>
+                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">Coming Soon</h5>
+                        <p class="card-text ms-2 project-text mb-1">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-body">
+            <section>
+                <div class="container-fluid mx-auto">
+                    <div class="row mx-auto mt-2 justify-content-evenly">
+                        <div class="col-md-2 col-lg-2 col-xl-2 mb-3">
+                            <h6 class="mb-2 text-footer mt-4 fs-5">
+                                Copyright and Attribution
+                            </h6>
+                            <p class="text-footer">
+                                © 2025 Leo Tang <br><a
+                                    href="https://wallpapers.com/png/question-mark-icon-ckuulznhkaxaqn7y.html"
+                                    class="footer-link">PNG by mikejoker</a> on Wallpapers.com
+                            </p>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mb-3">
+                            <h6 class="mb-2 text-footer mt-4 fs-5">
+                                Navigation
+                            </h6>
+                            <p class="footer-link">
+                                <a href="index.html" class="footer-link">Home</a>
+                            </p>
+                            <p class="footer-link">
+                                <a href="#top" class="footer-link">Projects</a>
+                            </p>
+                            <p class="footer-link">
+                                <a href="connect.html" class="footer-link">Connect</a>
+                            </p>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mb-3">
+                            <h6 class="mb-2 text-footer mt-4 fs-5">
+                                Connect
+                            </h6>
+                            <p class="text-footer footer-link">
+                                <a href="mailto:leotangsoftware@gmail.com" class="footer-link">Email</a>
+                            </p>
+                            <p class="text-footer footer-link">
+                                <a href="https://www.linkedin.com/in/leo-tang-a73139268/"
+                                    class="footer-link">LinkedIn</a>
+                            </p>
+                            <p class="text-footer footer-link">
+                                <a href="https://github.com/leotyes" class="footer-link">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </main>
+</body>
+
 </html>
