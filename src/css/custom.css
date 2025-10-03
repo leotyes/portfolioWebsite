@@ -182,21 +182,6 @@ html {
 	min-height: 100px;
 }
 
-.connect-margin {
-    margin-top: 15vh;
-}
-
-.wave-container-connect {
-	flex-shrink: 0;
-	height: 30vh;
-    margin-top: 0vh;
-	bottom: 25vh;
-    margin-bottom: 10vh;
-	left: 0;
-	right: 0;
-	min-height: 100px;
-}
-
 .following-items {
 	max-width: 1750px;
 }
