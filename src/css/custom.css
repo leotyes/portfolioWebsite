@@ -1,231 +1,250 @@
 .title-padding {
-    padding-top: 24vh !important;
-    /* padding-bottom: 6rem !important; */
+	padding-top: 24vh !important;
+	/* padding-bottom: 6rem !important; */
 }
 
 .nav-content-padding {
-    padding-left: 8rem;
-    padding-right: 8rem;
+	padding-left: 8rem;
+	padding-right: 8rem;
 }
 
 @media (max-width: 1400px) {
-    .title-padding {
-        padding: 2rem !important;
-        text-align: center;
-    }
+	.title-padding {
+		padding: 2rem !important;
+		text-align: center;
+	}
 }
 
 .title-font {
-    font-size: 60px !important;
+	font-size: 60px !important;
 }
 
 .hello-font {
-    font-size: 60px !important;
+	font-size: 60px !important;
 }
 
 .shadow-white {
-    box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 
-                0 2px 4px -1px rgba(255, 255, 255, 0.06);
+	box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1),
+		0 2px 4px -1px rgba(255, 255, 255, 0.06);
 }
 
 .shadow-gradient {
-    box-shadow: 
-        0 0 0.5rem -0.1rem #62EFABFF,
-        30rem 0 0.5rem -0.1rem #F2EA7DFF,
-        60rem 0 0.5rem -0.1rem #FF8797FF,
-        90rem 0 0.5rem -0.1rem #E1A4F4FF,
-        120rem 0 0.5rem -0.1rem #82FFF4FF;
+	box-shadow: 0 0 0.5rem -0.1rem #62efabff, 30rem 0 0.5rem -0.1rem #f2ea7dff,
+		60rem 0 0.5rem -0.1rem #ff8797ff, 90rem 0 0.5rem -0.1rem #e1a4f4ff,
+		120rem 0 0.5rem -0.1rem #82fff4ff;
 }
 
 @keyframes bar {
-
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
-
+	0% {
+		background-position: 0%;
+	}
+	100% {
+		background-position: 200%;
+	}
 }
 
-
 hr.navbar-gradient {
-    border: none;
-    height: 3px;
-    display: block;
-    background: linear-gradient(
-            to right,
-            #62efab 0%,
-            #F2EA7D 20%,
-            #FF8797 40%,
-            #E1A4F4 60%,
-            #82FFF4 80%,
-            #62efab 100%
-    );
-    margin: 0;
-    position: relative;
-    opacity: 1;
-    width: 100%;
-    background-size: 200%;
-    animation: bar 120s linear infinite;
+	border: none;
+	height: 3px;
+	display: block;
+	background: linear-gradient(
+		to right,
+		#62efab 0%,
+		#f2ea7d 20%,
+		#ff8797 40%,
+		#e1a4f4 60%,
+		#82fff4 80%,
+		#62efab 100%
+	);
+	margin: 0;
+	position: relative;
+	opacity: 1;
+	width: 100%;
+	background-size: 200%;
+	animation: bar 120s linear infinite;
 }
 
 .description-text {
-    color: #9CA3AF !important;
+	color: #9ca3af !important;
 }
 
 .card-text {
-    color: #9CA3AF !important;
-    font-size: 15px !important;
+	color: #9ca3af !important;
+	font-size: 15px !important;
 }
 
 .card-title {
-    font-size: 25px !important;
+	font-size: 25px !important;
 }
 
 .card-img-top {
-    height: 12vw !important;
-    max-height: 12vw !important;
-    object-fit: cover;
-    object-position: top;
+	height: 12vw !important;
+	max-height: 12vw !important;
+	object-fit: cover;
+	object-position: top;
 }
 
 .card-img-top.svg {
-    display: flex !important;
-    object-fit: contain !important;
-    margin: auto !important;
-    padding-top: 8vh;
-    padding-bottom: 8vh;
-    padding-right: 3vw;
-    padding-left: 3vw;
-    justify-content: center !important;
-    align-items: center !important;
+	display: flex !important;
+	object-fit: contain !important;
+	margin: auto !important;
+	padding-top: 8vh;
+	padding-bottom: 8vh;
+	padding-right: 3vw;
+	padding-left: 3vw;
+	justify-content: center !important;
+	align-items: center !important;
 }
 
 .tech-icons-container {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
 }
 
 .tech-icons-container img {
-    height: 28px;
-    width: 28px;
-    object-fit: contain;
-    display: block;
+	height: 28px;
+	width: 28px;
+	object-fit: contain;
+	display: block;
 }
 
-
 .card-body {
-    padding-top: 0.6rem !important;
+	padding-top: 0.6rem !important;
 }
 
 .footer-body {
-    background-color: #1C1E2F;
+	background-color: #1c1e2f;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 .text-footer {
-    color: #D1D5DB;
-    text-decoration: none !important;
+	color: #d1d5db;
+	text-decoration: none !important;
 }
 
 .technical-card-padding {
-    padding-top: 4em !important;
-    padding-bottom: 3em !important;
+	padding-top: 4em !important;
+	padding-bottom: 3em !important;
 }
 
 .project-text {
-    line-height: 1.75em;
+	line-height: 1.75em;
 }
 
 .bg-after-wave {
-    background-color: #202235;
+	background-color: #202235;
 }
 
 .project-text-title {
-    line-height: 1.35em;
+	line-height: 1.35em;
 }
 
 .img-crop {
-  object-fit: cover;
-  object-position: center;
-  width: 50%;
-  height: 25rem;
-  border-radius: .75rem;
+	object-fit: cover;
+	object-position: center;
+	width: 50%;
+	height: 25rem;
+	border-radius: 0.75rem;
 }
 
 #hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 .hero-content {
-    flex: none;
+	flex: none;
 }
 
 .text-footer {
-    line-height: 1.5em !important;
+	line-height: 1.5em !important;
 }
 
 .footer-link {
-  margin-bottom: 0.6rem !important;
-  color: #60A5FA !important;
-  text-decoration: none;
+	margin-bottom: 0.6rem !important;
+	color: #60a5fa !important;
+	text-decoration: none;
 }
 
 .wave-container {
-  flex-shrink: 0;
-  height: 30vh;
-  position: absolute;
-  bottom: 25vh;
-  left: 0;
-  right: 0;
-  min-height: 100px;
+	flex-shrink: 0;
+	height: 30vh;
+	position: absolute;
+	bottom: 25vh;
+	left: 0;
+	right: 0;
+	min-height: 100px;
+}
+
+.connect-margin {
+    margin-top: 15vh;
+}
+
+.wave-container-connect {
+	flex-shrink: 0;
+	height: 30vh;
+    margin-top: 0vh;
+	bottom: 25vh;
+    margin-bottom: 10vh;
+	left: 0;
+	right: 0;
+	min-height: 100px;
 }
 
 .following-items {
-    max-width: 1750px;
+	max-width: 1750px;
+}
+
+.pdf-resume {
+	height: 80vh;
+	border: none;
+	display: block;
 }
 
 .technical-skills-grid-padding {
-    max-width: 80vw;
+	max-width: 80vw;
 }
 
 .about-text {
-    line-height: 2em;
+	line-height: 2em;
 }
 
-html, body {
-    overflow-x: hidden;
+html,
+body {
+	overflow-x: hidden;
 }
 
 .project-shadow {
-    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-    transition: box-shadow 0.3s cubic-bezier(.4,2,.6,1);
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+	transition: box-shadow 0.3s cubic-bezier(0.4, 2, 0.6, 1);
 }
 
 .project-shadow:hover {
-    box-shadow: 0 14px 32px rgba(0,0,0,0.5);
+	box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
 }
 
 .border-primary {
-  border-color: #161728 !important;
-  border-width: 2px !important;
-  overflow: hidden;
+	border-color: #161728 !important;
+	border-width: 2px !important;
+	overflow: hidden;
 }
 
 .card-img-area {
-    position: relative;
-    width: 100%;
-    height: 100%;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 
 .img-fallback {
-    position: absolute;
-    inset: 0;
-    display: flex;
+	position: absolute;
+	inset: 0;
+	display: flex;
 }
 
 /* swing for hovering over card and jack in the box for card entrance */
