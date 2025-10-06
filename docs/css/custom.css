@@ -100,6 +100,17 @@ hr.navbar-gradient {
 	display: flex;
 	gap: 0.5rem;
 	flex-wrap: wrap;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	margin-left: 0.5rem;
+    padding-right: 0.75rem;
+}
+
+.tech-stack {
+	display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .tech-icons-container img {
@@ -247,4 +258,12 @@ body {
 	display: flex;
 }
 
-/* swing for hovering over card and jack in the box for card entrance */
+.project-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    color: #6B7280;
+}
