@@ -66,6 +66,22 @@
     transform: rotate3d(0, 0, 1, 0deg);
   }
 }
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background: #181a2b;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #4e505b;
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #10111F;
+}
+
+
 .hr {
   width: 100%;
   height: 2px;
