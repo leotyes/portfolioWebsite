@@ -3,6 +3,10 @@
 	/* padding-bottom: 6rem !important; */
 }
 
+.title-connect-padding {
+	padding-top: 16vh !important;
+}
+
 .nav-content-padding {
 	padding-left: 8rem;
 	padding-right: 8rem;
@@ -206,6 +210,11 @@ html {
 	right: 0;
 	min-height: 100px;
     pointer-events: none;
+    z-index: -1;
+}
+
+.connect-intro {
+    z-index: 1000;
 }
 
 .following-items {
