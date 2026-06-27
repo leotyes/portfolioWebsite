@@ -9,10 +9,15 @@
     <link href="css/new.css" rel="stylesheet" />
 
     <script src="js/anims.js" defer></script>
+    <script src="js/adjust.js" defer></script>
+    <script src="js/cursor.js" defer></script>
+    <script src="js/reload.js" defer></script>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="pictures/CursorClickSmall.png">
+    <link rel="preload" as="image" href="pictures/CursorSmall.png">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
@@ -20,31 +25,62 @@
 <body>
 
     <div class="bg-camera"></div>
+    <img id="cursor" src="pictures/CursorNormal.png">
 
-    <div class="cyber-column">
+    <div id="app">
+        <div class="cyber-column">
 
-        <!-- CYBER TEXT (CENTERED STACK) -->
-        <div class="cyberpunk-text-wrapper">
+            <div class="cyberpunk-text-wrapper">
 
-            <!-- SHADOW LAYER -->
-            <div class="cyberpunk-shadow">
-                <span class="leo">LEO</span>
-                <span class="tang">TANG</span>
+                <div class="cyberpunk-shadow">
+                    <span class="leo">LEO</span>
+                    <span class="tang">TANG</span>
+                </div>
+
+                <div class="cyberpunk-text">
+                    LEO&nbsp;&nbsp;&nbsp;&nbsp;TANG
+                </div>
+
             </div>
 
-            <div class="cyberpunk-text">
-                LEO&nbsp;&nbsp;&nbsp;&nbsp;TANG
+            <div class="buttons-container">
+
+                <a href="projects.html" class="cyber-button-wrapper clickable">
+                    <svg class="cyber-button" viewBox="0 0 100 60">
+                        <path class="btn-shape" d="M0 0 H100 V44 L84 60 H0 Z" />
+                        <text x="18" y="38">PROJECTS</text>
+                    </svg>
+                </a>
+
+                <a href="#about" class="cyber-button-wrapper clickable">
+                    <svg class="cyber-button" viewBox="0 0 220 60">
+                        <path class="btn-shape" d="M0 0 H220 V44 L204 60 H0 Z" />
+                        <text x="18" y="38">ABOUT ME</text>
+                    </svg>
+                </a>
+
+                <a href="resume.html" class="cyber-button-wrapper clickable">
+                    <svg class="cyber-button" viewBox="0 0 220 60">
+                        <path class="btn-shape" d="M0 0 H220 V44 L204 60 H0 Z" />
+                        <text x="18" y="38">RESUME</text>
+                    </svg>
+                </a>
+
+                <a href="#credits" class="cyber-button-wrapper clickable">
+                    <svg class="cyber-button" viewBox="0 0 220 60">
+                        <path class="btn-shape" d="M0 0 H220 V44 L204 60 H0 Z" />
+                        <text x="18" y="38">CREDITS</text>
+                    </svg>
+                </a>
+
             </div>
 
-        </div>
+            <div class="bottom-left-text">
+                © 2026 Leo Tang
+            </div>
 
-        <div class="buttons-container">
-            <div class="cyber-button">PROJECTS</div>
-            <div class="cyber-button">ABOUT ME</div>
-            <div class="cyber-button">CREDITS</div>
+            <div class="line-overlay"></div>
         </div>
-
-        <div class="line-overlay"></div>
     </div>
 
 </body>
