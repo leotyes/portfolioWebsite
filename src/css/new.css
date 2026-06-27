@@ -1,4 +1,4 @@
-body {
+/* body {
 	margin: 0;
 	height: 100vh;
 
@@ -10,7 +10,7 @@ body {
 	align-items: center;
 	justify-content: flex-start;
 	padding-left: 12vw;
-}
+} */
 
 #cursor {
 	position: fixed;
@@ -442,6 +442,57 @@ body {
 	mix-blend-mode: multiply;
 }
 
+.bg-resume-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+
+	pointer-events: none;
+}
+
+.bg-resume-overlay::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+
+	background:
+		radial-gradient(
+			ellipse at 50% 18%,
+			rgba(255, 40, 40, 0.14),
+			transparent 80%
+		),
+		radial-gradient(
+			ellipse at 15% 25%,
+			rgba(255, 40, 40, 0.08),
+			transparent 85%
+		),
+		radial-gradient(
+			ellipse at 85% 25%,
+			rgba(255, 40, 40, 0.08),
+			transparent 85%
+		),
+		radial-gradient(ellipse at 50% 0%, rgba(255, 40, 40, 0.05), transparent 90%);
+
+	mix-blend-mode: screen;
+	opacity: 0.85;
+}
+
+.bg-resume-overlay::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.02) 0%,
+		rgba(0, 0, 0, 0.15) 35%,
+		rgba(0, 0, 0, 0.45) 70%,
+		rgba(0, 0, 0, 0.75) 100%
+	);
+
+	mix-blend-mode: multiply;
+}
+
 .top-hud {
 	position: fixed;
 	top: 0;
@@ -583,10 +634,10 @@ body {
 }
 
 .right-title-block {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 80px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding-top: 80px;
 }
 
 .right-line {
@@ -672,69 +723,241 @@ body {
 }
 
 .right-meta-inline {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+	display: flex;
+	gap: 10px;
+	align-items: center;
 }
 
 .page {
-    width: 100%;
-    height: 100vh;
+	width: 100%;
+	height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .left-deco {
-    position: relative;
+	position: relative;
 
-    height: 55vh;
-    width: auto;
+	height: 55vh;
+	width: auto;
 
-    opacity: 1;
-    filter: drop-shadow(0 0 10px rgba(0,255,255,0.15));
+	opacity: 1;
+	filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.15));
 }
 
 .center-box {
-    width: 42vw;
-    height: 55vh;
+	width: 42vw;
+	height: 55vh;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
 
-    background: rgba(10, 10, 14, 0.55);
-    border: 1px solid rgba(0, 255, 255, 0.25);
+	align-items: flex-start;
+	justify-content: flex-start;
 
-    backdrop-filter: blur(12px);
+	background: rgba(10, 10, 14, 0.55);
+	border: 1px solid rgba(0, 255, 255, 0.9);
 
-    box-shadow:
-        0 0 25px rgba(0, 255, 255, 0.15),
-        0 0 80px rgba(0, 255, 255, 0.08);
+	backdrop-filter: blur(12px);
 
-    padding: 40px;
+	box-shadow:
+		0 0 25px rgba(0, 255, 255, 0.15),
+		0 0 80px rgba(0, 255, 255, 0.08);
+
+	padding: 40px;
+
+	overflow-y: auto;
+}
+
+.center-layout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.right-stack {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-top: 56px;
+	gap: 11px;
+}
+
+.center-box-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 12px;
 }
 
 .center-title {
-    font-family: "Oxanium", sans-serif;
-    font-size: 42px;
-    color: rgb(0, 255, 255);
-    letter-spacing: 2px;
+	font-family: "Oxanium", sans-serif;
+	font-size: 42px;
+	color: rgb(0, 255, 255);
+	letter-spacing: 2px;
 
-    text-shadow:
-        0 0 6px rgba(0,255,255,0.4),
-        0 0 18px rgba(0,255,255,0.2);
+	text-shadow:
+		0 0 6px rgba(0, 255, 255, 0.4),
+		0 0 18px rgba(0, 255, 255, 0.2);
 }
 
 .center-subtitle {
-    margin-top: 20px;
+	margin-top: 20px;
 
-    font-family: "Oxanium", sans-serif;
-    font-size: 18px;
-    color: rgb(0, 255, 255);
+	font-family: "Oxanium", sans-serif;
+	font-size: 18px;
+	color: rgb(0, 255, 255);
 
-    text-shadow: none;
-    opacity: 0.85;
+	text-shadow: none;
+	opacity: 0.85;
+}
+
+.resume-header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.resume-section {
+	width: 100%;
+	margin-bottom: 28px;
+}
+
+.resume-title {
+	font-family: "Oxanium", sans-serif;
+	font-size: 22px;
+	color: rgb(0, 255, 255);
+	letter-spacing: 1px;
+	font-weight: 450;
+
+	text-shadow: 0 0 6px rgba(0, 255, 255, 0.35);
+
+	white-space: nowrap;
+	margin-right: 12px;
+}
+
+.resume-line {
+	height: 1px;
+	flex: 1;
+	background: rgba(0, 255, 255, 0.6);
+	box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+}
+
+.resume-item {
+	font-family: "Oxanium", sans-serif;
+	font-size: 15px;
+	color: rgba(0, 255, 255, 0.9);
+
+	margin-left: 16px;
+	margin-bottom: 6px;
+}
+
+.resume-item::before {
+	content: "• ";
+	color: rgb(0, 255, 255);
+}
+
+.resume-entry {
+	width: 100%;
+	margin-bottom: 18px;
+}
+
+.entry-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+
+	width: 100%;
+	margin-bottom: 6px;
+}
+
+.entry-title {
+	font-family: "Oxanium", sans-serif;
+	font-size: 18px;
+	color: rgb(0, 255, 255);
+
+	text-shadow: 0 0 6px rgba(0, 255, 255, 0.25);
+}
+
+.entry-date {
+	font-family: "Oxanium", sans-serif;
+	font-size: 14px;
+	color: rgba(0, 255, 255, 0.6);
+}
+
+.entry-body {
+	margin-left: 14px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.center-box::-webkit-scrollbar {
+	width: 6px;
+}
+
+.center-box::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.center-box::-webkit-scrollbar-thumb {
+	background: rgb(0, 255, 255);
+	border-radius: 0px;
+	box-shadow: 0 0 8px rgba(0, 255, 255, 0.35);
+}
+
+.center-box::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 255, 255, 0.85);
+}
+
+.resume-top {
+	width: 100%;
+	margin-bottom: 14px;
+}
+
+.center-title {
+	font-family: "Oxanium", sans-serif;
+	font-size: 34px;
+	color: rgb(0, 255, 255);
+	letter-spacing: 2px;
+	font-weight: 500;
+
+	text-shadow:
+		0 0 6px rgba(0, 255, 255, 0.4),
+		0 0 18px rgba(0, 255, 255, 0.2);
+}
+
+.center-subtitle {
+	margin-top: 6px;
+
+	font-family: "Oxanium", sans-serif;
+	font-size: 14px;
+	color: rgba(0, 255, 255, 0.9);
+
+	opacity: 0.9;
+}
+
+.center-subtitle a {
+	color: rgb(0, 255, 255);
+	text-decoration: none;
+	opacity: 0.9;
+}
+
+.center-subtitle a:hover {
+	opacity: 1;
+	text-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+}
+
+.title-line {
+	margin-top: 14px;
+	width: 100%;
+	height: 1px;
+
+	background: rgba(0, 255, 255, 0.6);
+	box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
 }
