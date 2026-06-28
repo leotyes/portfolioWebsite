@@ -3,251 +3,178 @@
 
 <head>
     <title>Portfolio | Leo Tang</title>
+
     <link href="bootstrap/main.css" rel="stylesheet" />
     <link href="animate.css/animate.css" rel="stylesheet" />
-    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/new.css" rel="stylesheet" />
+
     <script src="js/anims.js" defer></script>
+    <script src="js/adjust.js" defer></script>
+    <script src="js/cursor.js" defer></script>
+    <script src="js/reload.js" defer></script>
+    <script src="js/projects.js" defer></script>
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/4f0032635d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="pictures/CursorClickSmall.png">
+    <link rel="preload" as="image" href="pictures/CursorSmall.png">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body class="bg-dark">
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
-    <main>
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-4">
-            <div class="container-fluid nav-content-padding">
-                <span class="navbar-brand mb-0 h1 ms-3 fw-bold fs-3">Leo Tang</span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="navbar-nav ms-auto">
-                        <a class="nav-link fw-normal fs-5" href="index.html">Home</a>
-                        <a class="nav-link fw-normal fs-5 fs-bold active" href="projects.html">Projects</a>
-                        <a class="nav-link fw-normal fs-5" href="connect.html">Connect</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="row bg-dark mb-5 mt-5">
-            <div class="col-12 mb-5">
-                <h2 class="animate__animated text-light fw-bold fs-1 animate__fadeInUp text-center">My Projects</h2>
-            </div>
+<body>
+    <div class="bg-camera"></div>
+    <img id="cursor" src="pictures/CursorNormal.png">
+
+    <div id="app">
+        <div class="bg-red-overlay"></div>
+        <div class="top-hud">
+            <a href="index.html" class="back-button clickable">
+                <svg class="back-cyber-button" viewBox="0 0 100 60">
+                    <path class="btn-shape-back" d="M0 0 H100 V44 L84 60 H0 Z" />
+                    <text x="18" y="38">BACK</text>
+                </svg>
+            </a>
+            <div class="hud-title">LEO TANG</div>
+            <div class="hud-bar"></div>
         </div>
-        <div class="row bg-dark justify-content-evenly card-padding mb-5">
-            <div
-                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
-                <div class="card border-primary card-passion h-100 w-100 project-shadow">
-                    <img class="card-img-top bg-dark px-4 py-4" src="pictures/StudyLocal.jpeg">
-                    <div class="card-body">
-                        <div class="tech-icons-container mb-2 ms-2">
-                            <div class="tech-stack">
-                                <img src="pictures/HTMLIcon.png">
-                                <img src="pictures/CSSIcon.png">
-                                <img src="pictures/JSIcon.png">
+
+        <div class="page-content">
+
+            <div class="left-panel">
+
+
+                <div class="project-item-wrapper clickable" data-project="portfolio">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">Portfolio Website</text>
+                    </svg>
+                    <div class="project-subtext">You're on it right now!</div>
+                </div>
+                <div class="project-item-wrapper clickable" data-project="circuitforge">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">CircuitForge</text>
+                    </svg>
+                    <div class="project-subtext">Web app that helps hobbyists design PCBs</div>
+                </div>
+                <div class="project-item-wrapper clickable" data-project="nexus">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">NEXUS</text>
+                    </svg>
+                    <div class="project-subtext">Assistive device that helps people with deafblindness follow
+                        conversations</div>
+                </div>
+                <div class="project-item-wrapper clickable" data-project="radius">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">Radius</text>
+                    </svg>
+                    <div class="project-subtext">Mobile app that connects users with local businesses</div>
+                </div>
+                <div class="project-item-wrapper clickable" data-project="deltadispatch">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">DeltaDispatch</text>
+                    </svg>
+                    <div class="project-subtext">Web app that helps dispatchers identify the most critical calls</div>
+                </div>
+                <div class="project-item-wrapper clickable" data-project="trashtag">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">TrashTag</text>
+                    </svg>
+                    <div class="project-subtext">Android app that gamifies environmental cleanup</div>
+                </div>
+                <div class="project-item-wrapper clickable" data-project="leaf">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">Leaf</text>
+                    </svg>
+                    <div class="project-subtext">Android todo list with time- and location-based reminders</div>
+                </div>
+                <div class="project-item-wrapper clickable" data-project="studylocal">
+                    <svg class="list-item" viewBox="0 0 260 60">
+                        <path d="M0 0 H260 V44 L244 60 H0 Z" />
+                        <text x="18" y="38">StudyLocal</text>
+                    </svg>
+                    <div class="project-subtext">Web app that helps students find and compare the best study spots</div>
+                </div>
+
+
+            </div>
+
+            <div class="right-panel">
+
+                <div class="right-title-row">
+                    <div class="right-title-block">
+                        <!-- TODO do not remove maybe make title a little whiter than the bottom -->
+                        <div class="right-title">PROJECT TITLE</div>
+                        <div class="right-meta-row">
+                            <div class="meta-box clickable icon-swap" data-icon="github">
+                                <svg viewBox="0 0 60 60" class="meta-svg">
+                                    <path class="meta-shape" d="M0 0 H60 V44 L44 60 H0 Z" />
+                                    <a href="">
+                                        <image href="pictures/githubinactive.svg" x="12" y="12" width="60%" height="60%"
+                                            preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    </a>
+                                </svg>
                             </div>
-                            <div class="project-links">
-                                <a href="https://github.com/STRSigmas/ignitionHacksSTRSigmas">
-                                    <img src="pictures/GitHubIcon.png">
-                                </a>
-                                <a href="https://devpost.com/software/studylocal">
-                                    <img src="pictures/DevpostIcon.png">
-                                </a>
+
+                            <div class="meta-box clickable icon-swap" data-icon="devpost">
+                                <svg viewBox="0 0 60 60" class="meta-svg">
+                                    <path class="meta-shape" d="M0 0 H60 V44 L44 60 H0 Z" />
+                                    <a href="">
+                                        <image href="pictures/devpostinactive.svg" x="12" y="12" width="60%"
+                                            height="60%" preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    </a>
+                                </svg>
                             </div>
+
+                            <div class="meta-box clickable icon-swap" data-icon="ysc">
+                                <svg viewBox="0 0 60 60" class="meta-svg">
+                                    <path class="meta-shape" d="M0 0 H60 V44 L44 60 H0 Z" />
+                                    <a href="">
+                                        <image href="pictures/yscinactive.png" x="12" y="12" width="60%"
+                                            height="60%" preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    </a>
+                                </svg>
+                            </div>
+
                         </div>
-                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">StudyLocal</h5>
-                        <p class="card-text ms-2 project-text mb-1">Finds optimal studying locations using Google Places
-                            API based on
-                            several factors, including distance, internet availability, and review analysis. Made at
-                            Ignition Hacks v.6.</p>
+                    </div>
+                    <div class="right-line"></div>
+
+                    <div class="right-title-image">
+                        <svg class="right-image clickable" viewBox="0 0 260 100">
+                            <defs>
+                                <clipPath id="cut-corner">
+                                    <path id="clip-path-shape" d="M0 0 H260 V44 L244 100 H0 Z" />
+                                </clipPath>
+                            </defs>
+                            <path id="main-path" d="M0 0 H260 V44 L244 56 H0 Z" />
+                            <image href="pictures/PortfolioWebsitePreview.jpeg" width="260" height="60"
+                                clip-path="url(#cut-corner)" preserveAspectRatio="xMidYMid slice" x="0" y="0" />
+                        </svg>
                     </div>
                 </div>
-            </div>
-            <div
-                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
-                <div class="card border-primary card-passion h-100 w-100 project-shadow">
-                    <img class="card-img-top bg-dark svg px-4 py-4" src="pictures/LeafMockupPreview.png">
-                    <div class="card-body">
-                        <div class="tech-icons-container mb-2 ms-2">
-                            <div class="tech-stack">
-                                <img src="pictures/AndroidStudioIcon.png">
-                                <img src="pictures/KotlinIcon.png">
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/leotyes/TodoList">
-                                    <img src="pictures/GitHubIcon.png">
-                                </a>
-                            </div>
-                        </div>
-                        <h5 class="card-title text-light fs-3 ms-2 project-text-title">Leaf</h5>
-                        <p class="card-text ms-2 project-text mb-1">Todo list that helps users manage tasks with time-
-                            and location-based
-                            reminders. Built with Kotlin and XML in Android Studio, using the MVVM architecture.</p>
-                    </div>
+
+
+
+                <div class="right-text">
+                    placeholder text goes here<br>
+                    more placeholder content<br>
+                    more red cyber text
                 </div>
+
             </div>
-            <div
-                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
-                <div class="card border-primary card-passion h-100 w-100 project-shadow">
-                    <img class="card-img-top bg-dark px-4 py-4" src="pictures/PortfolioWebsitePreview.jpeg">
-                    <div class="card-body">
-                        <div class="tech-icons-container mb-2 ms-2">
-                            <div class="tech-stack">
-                                <img src="pictures/HTMLIcon.png">
-                                <img src="pictures/CSSIcon.png">
-                                <img src="pictures/JSIcon.png">
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/leotyes/portfolioWebsite">
-                                    <img src="pictures/GitHubIcon.png">
-                                </a>
-                            </div>
-                        </div>
-                        <h5 class="card-title text-light fs-3 ms-2 project-text-title">Portfolio Website</h5>
-                        <p class="card-text ms-2 project-text mb-1">Used Bootstrap to create a simple introduction
-                            website. You're on it right now.</p>
-                    </div>
-                </div>
-            </div>
+
         </div>
-        <div class="row bg-dark justify-content-evenly card-padding mb-5 mt-5">
-            <div
-                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
-                <div class="card border-primary card-passion h-100 w-100 project-shadow">
-                    <img class="card-img-top bg-dark svg" src="pictures/DMOJLogo.svg">
-                    <div class="card-body">
-                        <div class="tech-icons-container mb-2 ms-2">
-                            <div class="tech-stack">
-                                <img src="pictures/PythonIcon.png">
-                                <img src="pictures/CPPIcon.png">
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/leotyes/cpSolutions">
-                                    <img src="pictures/GitHubIcon.png">
-                                </a>
-                                <a href="https://github.com/leotyes/cppCpSolutions">
-                                    <img src="pictures/GitHubIcon.png">
-                                </a>
-                                <a href="https://dmoj.ca/user/leotyes">
-                                    <img src="pictures/DMOJIcon.png">
-                                </a>
-                            </div>
-                        </div>
-                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">Competitive Programming</h5>
-                        <p class="card-text ms-2 project-text mb-1">Solved several competitive programming problems on
-                            DMOJ, strengthening my
-                            knowledge of data structures and algorithms. Achieved distinction (top 25%) on CCC Junior.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
-                <div class="card border-primary card-passion h-100 w-100 project-shadow">
-                    <img class="card-img-top bg-dark svg px-4 py-4" src="pictures/TrashTagMockupPreview.png">
-                    <div class="card-body">
-                        <div class="tech-icons-container mb-2 ms-2">
-                            <div class="tech-stack">
-                                <img src="pictures/AndroidStudioIcon.png">
-                                <img src="pictures/KotlinIcon.png">
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/leotyes/TrashTagMobileApp">
-                                    <img src="pictures/GitHubIcon.png">
-                                </a>
-                                <a href="https://devpost.com/software/trashtag-o1itd0">
-                                    <img src="pictures/DevpostIcon.png">
-                                </a>
-                            </div>
-                        </div>
-                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">TrashTag</h5>
-                        <p class="card-text ms-2 project-text mb-1">Community-driven app that gamifies neighborhood
-                            cleanup. Users report and verify litter with photos, earn points, and compete on
-                            leaderboards. Built with Firebase and Google Places API. Won third at Incubator Hacks II.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="col-3 d-flex justify-content-center align-items-center flex-column text-left animate__animated animate__fadeInUp">
-                <div class="card border-primary card-passion h-100 w-100 project-shadow">
-                    <img class="card-img-top bg-dark svg px-4 py-4" src="pictures/DeltaDispatch.png">
-                    <div class="card-body">
-                        <div class="tech-icons-container mb-2 ms-2">
-                            <div class="tech-stack">
-                                <img src="pictures/NextJSIcon.png">
-                                <img src="pictures/FastAPIIcon.png">
-                                <img src="pictures/RedisIcon.png">
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Penguin60/deltahacks-xii">
-                                    <img src="pictures/GitHubIcon.png">
-                                </a>
-                                <a href="https://devpost.com/software/delta-dispatch">
-                                    <img src="pictures/DevpostIcon.png">
-                                </a>
-                            </div>
-                        </div>
-                        <h5 class="card-title text-light fs-5 ms-2 project-text-title">DeltaDispatch</h5>
-                        <p class="card-text ms-2 project-text mb-1">AI-powered 911 dispatch system so no
-                            calls are missed. Uses Twilio to receive calls, Gemini API for
-                            transcription, and a custom ranking algorithm.
-                            Built with LangGraph and Pinecone. Made at DeltaHacks 12.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="footer-body">
-            <section>
-                <div class="container-fluid mx-auto">
-                    <div class="row mx-auto mt-2 justify-content-evenly">
-                        <div class="col-md-2 col-lg-2 col-xl-2 mb-3">
-                            <h6 class="mb-2 text-footer mt-4 fs-5">
-                                Copyright and Attribution
-                            </h6>
-                            <p class="text-footer">
-                                © 2025 Leo Tang <br><a
-                                    href="https://wallpapers.com/png/question-mark-icon-ckuulznhkaxaqn7y.html"
-                                    class="footer-link">PNG by mikejoker</a> on Wallpapers.com
-                            </p>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-xl-2 mb-3">
-                            <h6 class="mb-2 text-footer mt-4 fs-5">
-                                Navigation
-                            </h6>
-                            <p class="footer-link">
-                                <a href="index.html" class="footer-link">Home</a>
-                            </p>
-                            <p class="footer-link">
-                                <a href="#top" class="footer-link">Projects</a>
-                            </p>
-                            <p class="footer-link">
-                                <a href="connect.html" class="footer-link">Connect</a>
-                            </p>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-xl-2 mb-3">
-                            <h6 class="mb-2 text-footer mt-4 fs-5">
-                                Connect
-                            </h6>
-                            <p class="text-footer footer-link">
-                                <a href="mailto:leotangsoftware@gmail.com" class="footer-link">Email</a>
-                            </p>
-                            <p class="text-footer footer-link">
-                                <a href="https://www.linkedin.com/in/leo-tang-a73139268/"
-                                    class="footer-link">LinkedIn</a>
-                            </p>
-                            <p class="text-footer footer-link">
-                                <a href="https://github.com/leotyes" class="footer-link">GitHub</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </footer>
-    </main>
+    </div>
+
+
 </body>
 
 </html>
