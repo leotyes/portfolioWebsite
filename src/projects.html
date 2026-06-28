@@ -12,6 +12,7 @@
     <script src="js/adjust.js" defer></script>
     <script src="js/cursor.js" defer></script>
     <script src="js/reload.js" defer></script>
+    <script src="js/projects.js" defer></script>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,21 +45,21 @@
             <div class="left-panel">
 
 
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="portfolio">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">Portfolio Website</text>
                     </svg>
                     <div class="project-subtext">You're on it right now!</div>
                 </div>
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="circuitforge">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">CircuitForge</text>
                     </svg>
                     <div class="project-subtext">Web app that helps hobbyists design PCBs</div>
                 </div>
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="nexus">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">NEXUS</text>
@@ -66,35 +67,35 @@
                     <div class="project-subtext">Assistive device that helps people with deafblindness follow
                         conversations</div>
                 </div>
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="radius">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">Radius</text>
                     </svg>
                     <div class="project-subtext">Mobile app that connects users with local businesses</div>
                 </div>
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="deltadispatch">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">DeltaDispatch</text>
                     </svg>
                     <div class="project-subtext">Web app that helps dispatchers identify the most critical calls</div>
                 </div>
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="trashtag">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">TrashTag</text>
                     </svg>
                     <div class="project-subtext">Android app that gamifies environmental cleanup</div>
                 </div>
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="leaf">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">Leaf</text>
                     </svg>
                     <div class="project-subtext">Android todo list with time- and location-based reminders</div>
                 </div>
-                <div class="project-item-wrapper clickable">
+                <div class="project-item-wrapper clickable" data-project="studylocal">
                     <svg class="list-item" viewBox="0 0 260 60">
                         <path d="M0 0 H260 V44 L244 60 H0 Z" />
                         <text x="18" y="38">StudyLocal</text>
@@ -112,26 +113,38 @@
                         <!-- TODO do not remove maybe make title a little whiter than the bottom -->
                         <div class="right-title">PROJECT TITLE</div>
                         <div class="right-meta-row">
-                            <!-- TODO get two different colours for all the icons -->
-                            <div class="meta-box clickable">
+                            <div class="meta-box clickable icon-swap" data-icon="github">
                                 <svg viewBox="0 0 60 60" class="meta-svg">
                                     <path class="meta-shape" d="M0 0 H60 V44 L44 60 H0 Z" />
-                                    <image href="pictures/github.svg" x="12" y="12" width="60%" height="60%"
-                                        preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    <a href="">
+                                        <image href="pictures/githubinactive.svg" x="12" y="12" width="60%" height="60%"
+                                            preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    </a>
                                 </svg>
                             </div>
 
-                            <div class="meta-box clickable">
+                            <div class="meta-box clickable icon-swap" data-icon="devpost">
                                 <svg viewBox="0 0 60 60" class="meta-svg">
                                     <path class="meta-shape" d="M0 0 H60 V44 L44 60 H0 Z" />
-                                    <image href="pictures/devpost.svg" x="12" y="12" width="60%" height="60%"
-                                        preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    <a href="">
+                                        <image href="pictures/devpostinactive.svg" x="12" y="12" width="60%"
+                                            height="60%" preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    </a>
+                                </svg>
+                            </div>
+
+                            <div class="meta-box clickable icon-swap" data-icon="ysc">
+                                <svg viewBox="0 0 60 60" class="meta-svg">
+                                    <path class="meta-shape" d="M0 0 H60 V44 L44 60 H0 Z" />
+                                    <a href="">
+                                        <image href="pictures/yscinactive.png" x="12" y="12" width="60%"
+                                            height="60%" preserveAspectRatio="xMidYMid meet" class="meta-icon" />
+                                    </a>
                                 </svg>
                             </div>
 
                         </div>
                     </div>
-                    <!-- <div class="right-title">PROJECT TITLE</div> -->
                     <div class="right-line"></div>
 
                     <div class="right-title-image">

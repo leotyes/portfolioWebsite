@@ -4,6 +4,7 @@ function bindSpaLinks() {
 			const url = link.href;
 
 			if (!url.startsWith(window.location.origin)) return;
+            if (link.hasAttribute("download")) return;
 
 			e.preventDefault();
 
@@ -25,6 +26,9 @@ function bindSpaLinks() {
 					updateSvgButtons();
 					bindCursorHover();
 					syncCursorState();
+                    bindIconHoverSwap();
+                    bindProjectClicks();
+                    setProject("portfolio");
 					applyBodyStyles();
 					updateRightTitle(); // TODO do not remove make the update functions all one function
 				});
@@ -38,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	backUpdater();
 	updateSvgButtons();
 	bindCursorHover();
+    bindIconHoverSwap();
+    bindProjectClicks();
+    setProject("portfolio");
 	syncCursorState();
 	updateRightTitle();
 });
@@ -45,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function applyBodyStyles() {
 	const path = window.location.pathname.toLowerCase();
 
-	if (path.endsWith("resume.html")) {
+	if (path.endsWith("resume.html") || path.endsWith("about.html")) {
 		document.body.style.cssText = `
             margin: 0;
             height: 100vh;
@@ -69,7 +76,7 @@ function applyBodyStyles() {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            padding-left: 12vw;
+            padding-left: 12vw !important;
         `;
 	}
 }
@@ -91,8 +98,11 @@ window.addEventListener("popstate", async () => {
 			updateSvgButtons();
 			bindCursorHover();
 			syncCursorState();
+            bindIconHoverSwap();
 			applyBodyStyles();
 			updateRightTitle();
+            bindProjectClicks();
+            setProject("portfolio");
 		});
 
 		bindSpaLinks();
