@@ -11,24 +11,36 @@ function updateSvgButtons() {
 			if (!svg || !path) continue;
 
 			const width = wrapper.clientWidth;
-			let height = 60;
+			let height = wrapper.clientHeight;
 			if (selector == ".project-item-wrapper") {
 				height = 80;
 			}
-			const cut = 16;
+			const cut = height * 0.325;
 
 			svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
 
 			const d = `
-			M0 0
-			H${width}
-			V${height - cut}
-			L${width - cut} ${height}
-			H0
-			Z
-		`;
+                M0 0
+                H${width}
+                V${height - cut}
+                L${width - cut} ${height}
+                H0
+                Z
+		    `;
 
 			path.setAttribute("d", d);
+
+			if (selector === ".cyber-button-wrapper") {
+				const text = svg.querySelector("text");
+
+				if (text) {
+					text.setAttribute("y", height * 0.55);
+					text.setAttribute("dominant-baseline", "middle");
+
+					const fontSize = Math.max(14, Math.min(24, height * 0.5));
+					text.setAttribute("font-size", fontSize);
+				}
+			}
 		}
 	}
 }

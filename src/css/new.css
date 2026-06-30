@@ -31,7 +31,7 @@ body {
 	container-type: flex;
 	flex-direction: column;
 
-	width: 30vw;
+	width: 25vw;
 	min-width: 100px;
 	max-width: 480px;
 
@@ -58,7 +58,7 @@ body {
 
 .buttons-container {
 	position: absolute;
-	top: 40%;
+	top: 35%;
 	left: 50%;
 	transform: translateX(-50%);
 
@@ -67,9 +67,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	gap: 15px;
+	gap: 2vh;
 	padding-left: 36px;
 	padding-right: 36px;
+    height: 30vh;
 
 	z-index: 10;
 }
@@ -275,10 +276,10 @@ body {
 .cyberpunk-text-wrapper {
 	position: absolute;
 	margin-bottom: 200px;
-	top: 15%;
+	top: 10%;
 	left: 50%;
 	transform: translateX(-50%);
-	width: max-content;
+    width: 120%;
 	z-index: 20;
 }
 
@@ -360,22 +361,25 @@ body {
 
 .cyber-button {
 	width: 100%;
-	height: 60px;
+	height: 7vh;
+    max-height: 60px;
 	cursor: pointer;
 	display: block;
+    overflow: visible;
 	min-width: 100%;
 }
 
 .btn-shape {
 	fill: transparent;
 	stroke: transparent;
+    width: 100%;
 	stroke-width: 1;
 	transition: all 0.25s ease;
 }
 
 .cyber-button text {
 	font-family: "Oxanium", sans-serif;
-	font-size: 24px;
+	/* font-size: 24px; */
 	fill: rgb(255, 70, 70);
 	letter-spacing: 0px;
 	text-transform: uppercase;
@@ -395,6 +399,7 @@ body {
 	height: 100%;
 	cursor: pointer;
 	display: block;
+    overflow: visible;
 	min-width: 100%;
 }
 
@@ -574,6 +579,7 @@ body {
 .back-button {
 	position: static;
 	width: 110px;
+    overflow: visible;
 	height: 3.5vh;
 	min-height: 40px;
 }
@@ -597,13 +603,33 @@ body {
 	box-sizing: border-box;
 }
 
+.left-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.left-panel::-webkit-scrollbar-thumb {
+    background: rgb(255, 220, 0);
+    border-radius: 0;
+}
+
+.left-panel::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 235, 60);
+}
+
 .left-panel {
-	margin-top: 90px;
-	width: 40%;
-	display: flex;
-	flex-direction: column;
-	padding-right: 1px;
-	gap: 6px;
+    margin-top: 90px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 1px;
+    height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: clamp(6px, 1vh, 12px);
 }
 
 .list-item {
@@ -714,6 +740,7 @@ body {
 	stroke: rgba(255, 70, 70, 0.7);
 	stroke-width: 2;
 	transition: all 0.2s ease;
+	fill: rgba(25, 0, 0, 0.75);
 }
 
 .right-image text {
@@ -722,11 +749,6 @@ body {
 	fill: rgb(0, 255, 255);
 	font-weight: 500;
 }
-
-.right-image:hover path {
-	fill: rgba(10, 10, 14, 0.75);
-}
-
 .right-meta-row {
 	display: flex;
 	gap: 14px;
@@ -833,7 +855,7 @@ body {
 	flex-direction: column;
 	align-items: flex-end;
 	padding-top: 56px;
-	gap: 11px;
+	gap: 12px;
 }
 
 .center-box-wrapper {
