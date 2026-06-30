@@ -1,3 +1,46 @@
+function fitSvgText(textEl, maxWidth) {
+	const fullText = textEl.dataset.fullText || textEl.textContent.trim();
+	textEl.dataset.fullText = fullText;
+	console.log(textEl.getComputedTextLength() + " textlength");
+	console.log(maxWidth);
+    textEl.textContent = fullText;
+    textEl.getBoundingClientRect();
+
+	if (textEl.getComputedTextLength() <= maxWidth) {
+		console.log("alreayd less");
+		textEl.textContent = fullText;
+		return;
+	}
+
+	let low = 0;
+	let high = fullText.length;
+	let best = fullText;
+
+	while (low < high) {
+		const mid = Math.ceil((low + high) / 2);
+		const candidate = fullText.slice(0, mid) + "...";
+
+		textEl.textContent = candidate;
+		const len = textEl.getComputedTextLength();
+
+		if (len <= maxWidth) {
+			low = mid;
+			best = candidate;
+		} else {
+			high = mid - 1;
+		}
+	}
+    console.log(best)
+	textEl.textContent = best;
+}
+
+function updateProjectSubtext(wrapper, width) {
+	const subtext = wrapper.querySelector(".project-subtext");
+	if (!subtext) return;
+
+	fitSvgText(subtext, width - 36);
+}
+
 function updateSvgButtons() {
 	const wrapperSelectors = [".cyber-button-wrapper", ".project-item-wrapper"];
 
@@ -40,6 +83,8 @@ function updateSvgButtons() {
 					const fontSize = Math.max(14, Math.min(24, height * 0.5));
 					text.setAttribute("font-size", fontSize);
 				}
+			} else if (selector === ".project-item-wrapper") {
+				updateProjectSubtext(wrapper, width);
 			}
 		}
 	}

@@ -675,12 +675,12 @@ body {
 	font-weight: 500;
 	fill: rgba(180, 180, 180, 0.75);
 	letter-spacing: 0.5px;
-	pointer-events: none;
+	/* pointer-events: none; */
 
-	width: calc(100% - 32px);
+	/* width: calc(100% - 64px);
 	white-space: nowrap;
 	overflow: hidden;
-	text-overflow: ellipsis;
+	text-overflow: ellipsis; */
 }
 
 .right-panel {

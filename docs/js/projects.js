@@ -1,31 +1,34 @@
 const projects = {
 	portfolio: {
 		title: "Portfolio Website",
-		text: "You're on it right now!",
+		text: "Made with vanilla HTML, JS, and CSS.",
 		image: "pictures/PortfolioWebsite.png",
-		github: "",
+		github: "https://github.com/leotyes/portfolioWebsite",
 		devpost: "",
 	},
 
 	circuitforge: {
 		title: "CircuitForge",
-		text: "Web app that helps hobbyists design PCBs",
-		image: "pictures/circuitforge.jpeg",
-		github: "https://github.com/...",
-		devpost: "https://devpost.com/...",
+		text: "CircuitForge is a web app that helps beginners get started with PCB design by placing components and showing necessary connections. It uses an .ioc file, a components list, and pictures of your hardware setup to accurately create to produce a KiCAD file, which can be edited further. CircuitForge was made with React, FastAPI, and the Gemini API and won Best Usage of Generative AI at JAMHacks, the largest high school hackathon in Canada.",
+		image: "pictures/CircuitForge.png",
+		github: "https://github.com/leotyes/jamhacks10",
+		devpost: "https://devpost.com/software/circuit-sync-924t85",
 	},
 
 	nexus: {
 		title: "NEXUS",
-		text: "Assistive device that helps people with deafblindness follow conversations",
-		image: "pictures/nexus.jpeg",
+            text: "NEXUS is a wearable assistive device designed to support communication for individuals with deafblindness by enabling real-time access to spoken conversations. It captures surrounding audio, identifies who is speaking, and converts speech into accessible formats such as braille and enlarged text, allowing users to independently follow group discussions. It was built using an STM32 and Raspberry Pi with C and Python, implementing a novel real-time speaker diarization system. NEXUS won multiple awards including the Silver Excellence Award, the Youth Can Innovate Award, the Canadian Acoustical Association Special Award, and the Digital Technology Challenge Award at the senior level of the Canada-Wide Science Fair.",
+		image: "pictures/Nexus.png",
 		github: "",
 		devpost: "",
-        ysc: "https://ysc.com"
+		ysc: "https://partner.projectboard.world/ysc/project/nexus-a-multimodal-device-for-deafblind-communication-using-hybrid-dynamic-speaker-diarization-ljyrrz/",
 	},
 };
 
 function setProject(id) {
+    const path = window.location.pathname.toLowerCase();
+
+	if (!path.endsWith("projects.html")) return;
 	const data = projects[id];
 	if (!data) return;
 

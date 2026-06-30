@@ -47,12 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
     setProject("portfolio");
 	syncCursorState();
 	updateRightTitle();
+    applyBodyStyles();
 });
 
 function applyBodyStyles() {
 	const path = window.location.pathname.toLowerCase();
 
 	if (path.endsWith("resume.html") || path.endsWith("about.html")) {
+        console.log("switched");
 		document.body.style.cssText = `
             margin: 0;
             height: 100vh;
