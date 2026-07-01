@@ -685,7 +685,7 @@ body {
 
 .right-panel {
 	width: 60%;
-    height: 80vh !important;
+	height: 80vh !important;
 	display: flex;
 	flex-direction: column;
 }
@@ -958,6 +958,13 @@ body {
 	margin-bottom: 6px;
 }
 
+.resume-subtitle {
+	font-family: "Oxanium", sans-serif;
+	font-size: 15px;
+	color: rgba(0, 255, 255, 0.9);
+	margin-bottom: 6px;
+}
+
 .resume-item::before {
 	content: "• ";
 	color: rgb(0, 255, 255);
@@ -991,11 +998,27 @@ body {
 	color: rgba(0, 255, 255, 0.6);
 }
 
+.entry-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.entry-location {
+	font-family: "Oxanium", sans-serif;
+	font-size: 14px;
+	color: rgba(0, 255, 255, 0.6);
+}
+
 .entry-body {
 	margin-left: 14px;
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
+}
+
+.skill-label {
+    font-weight: 500;
 }
 
 .center-box::-webkit-scrollbar {
