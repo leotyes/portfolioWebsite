@@ -1277,4 +1277,5 @@ body {
 	animation: glowPulse 2.5s ease-in-out infinite;
 	pointer-events: none;
 	user-select: none;
+    text-align: center;
 }
