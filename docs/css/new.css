@@ -187,15 +187,22 @@ body {
 	position: fixed;
 	inset: 0;
 	z-index: -2;
+	overflow: hidden;
+	background: #07070a;
+}
 
-	background-image: url("../pictures/bg.jpg");
-	background-size: cover;
-	background-position: center;
+.bg-camera video {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 
-	/* REAL blur */
-	filter: blur(10px) brightness(0.35) contrast(1.1) saturate(1.2);
+	filter: blur(6px) brightness(0.35) contrast(1.1) saturate(1.2);
 
 	transform: scale(1.12);
+	will-change: transform;
 
 	animation: breathe 10s ease-in-out infinite;
 }
@@ -1254,7 +1261,7 @@ body {
 .center {
 	stroke-width: 3;
 }
-
+/* TEST */
 .coming-soon {
 	position: absolute;
 	top: 50%;

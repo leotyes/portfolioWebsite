@@ -9,7 +9,7 @@ const projects = {
 
 	circuitforge: {
 		title: "CircuitForge",
-		text: "CircuitForge is a web app that helps beginners get started with PCB design by placing components and showing necessary connections. It uses an .ioc file, a components list, and pictures of your hardware setup to accurately create to produce a KiCAD file, which can be edited further. CircuitForge was made with React, FastAPI, and the Gemini API and won Best Usage of Generative AI at JAMHacks, the largest high school hackathon in Canada.",
+		text: "CircuitForge is a web app that helps beginners get started with PCB design by placing components and showing necessary connections. It uses an .ioc file, a components list, and pictures of your hardware setup to accurately create to produce a KiCad file, which can be edited further. CircuitForge was made with React, FastAPI, and the Gemini API and won Best Usage of Generative AI at JAMHacks, the largest high school hackathon in Canada.",
 		image: "pictures/CircuitForge.png",
 		github: "https://github.com/leotyes/jamhacks10",
 		devpost: "https://devpost.com/software/circuit-sync-924t85",

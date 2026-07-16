@@ -24,7 +24,11 @@
 </head>
 
 <body>
-    <div class="bg-camera"></div>
+    <div class="bg-camera" aria-hidden="true">
+        <video autoplay muted loop playsinline poster="pictures/bg.jpg">
+            <source src="documents/BackgroundVideo.mp4" type="video/mp4">
+        </video>
+    </div>
     <img id="cursor" src="pictures/CursorNormal.png">
 
     <div id="app">
@@ -42,15 +46,15 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="credit-row">
+                
+                <!-- <div class="credit-row">
                     <span class="credit-label">Background Image</span>
                     <div class="credit-source">
                         <a href="https://wall.alphacoders.com/big.php?i=567999" class="credit-source-link" target="_blank">
                             <span class="clickable">Psytrance</span>
                         </a>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="credit-row">
                     <span class="credit-label">Cyberpunk Font</span>
