@@ -11,6 +11,7 @@ function bindSpaLinks() {
 			try {
 				const html = await fetch(url).then((r) => r.text());
 				const doc = new DOMParser().parseFromString(html, "text/html");
+				await syncPageStyles(doc);
 
 				const newContent = doc.querySelector("#app");
 				if (!newContent) return;
@@ -34,6 +35,26 @@ function bindSpaLinks() {
 				});
 			} catch (err) {}
 		});
+	});
+}
+
+function syncPageStyles(doc) {
+	const currentStyles = Array.from(document.querySelectorAll('link[rel="stylesheet"][href*="css/"]'));
+	const nextStyles = Array.from(doc.querySelectorAll('link[rel="stylesheet"][href*="css/"]')).map((link) =>
+		link.cloneNode(true)
+	);
+
+	const loadStyles = nextStyles.map(
+		(link) =>
+			new Promise((resolve) => {
+				link.addEventListener("load", resolve, { once: true });
+				link.addEventListener("error", resolve, { once: true });
+				document.head.appendChild(link);
+			})
+	);
+
+	return Promise.all(loadStyles).then(() => {
+		currentStyles.forEach((link) => link.remove());
 	});
 }
 
@@ -89,6 +110,7 @@ window.addEventListener("popstate", async () => {
 	try {
 		const html = await fetch(url).then((r) => r.text());
 		const doc = new DOMParser().parseFromString(html, "text/html");
+		await syncPageStyles(doc);
 
 		const newContent = doc.querySelector("#app");
 		if (!newContent) return;

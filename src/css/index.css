@@ -1,0 +1,304 @@
+@font-face {
+	font-family: "Cyberpunk";
+	src: url("../fonts/Cyberpunk.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.cyber-column {
+	position: relative;
+	container-type: flex;
+	flex-direction: column;
+
+	width: 25vw;
+	min-width: 100px;
+	max-width: 480px;
+
+	height: 100vh;
+
+	background: rgba(255, 30, 30, 0.05);
+
+	backdrop-filter: blur(10px);
+
+	border: 1px solid rgba(255, 90, 90, 0.45);
+
+	box-shadow:
+		0 0 30px rgba(255, 60, 60, 0.35),
+		0 0 80px rgba(255, 40, 40, 0.2),
+		0 0 0 1px rgba(255, 120, 120, 0.25),
+		inset 0 0 50px rgba(255, 40, 40, 0.1);
+
+	overflow: visible;
+
+	border-radius: 0px;
+
+	justify-content: center;
+}
+
+.cyber-column::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+
+	background:
+		radial-gradient(
+			ellipse at left center,
+			rgba(255, 140, 140, 0.15),
+			transparent 75%
+		),
+		radial-gradient(
+			ellipse at center center,
+			rgba(255, 90, 90, 0.1),
+			transparent 80%
+		),
+		radial-gradient(
+			ellipse at right center,
+			rgba(255, 50, 50, 0.04),
+			transparent 85%
+		),
+		linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.55) 0%,
+			rgba(255, 70, 70, 0.05) 30%,
+			rgba(255, 90, 90, 0.08) 50%,
+			rgba(255, 70, 70, 0.05) 70%,
+			rgba(0, 0, 0, 0.55) 100%
+		);
+
+	filter: blur(7px);
+
+	opacity: 0.6;
+
+	animation: energyFieldPulse 7s infinite ease-in-out;
+}
+
+.buttons-container {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 2vh;
+	padding-left: 36px;
+	padding-right: 36px;
+	height: 30vh;
+
+	z-index: 10;
+}
+
+.line-overlay {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+
+	background: repeating-linear-gradient(
+		to bottom,
+		rgba(255, 90, 90, 0.6) 0px,
+		rgba(255, 90, 90, 0.6) 1px,
+		transparent 2px,
+		transparent 4px
+	);
+
+	opacity: 1;
+
+	-webkit-mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 1) 18%,
+		rgba(0, 0, 0, 0.85) 40%,
+		rgba(0, 0, 0, 0.45) 70%,
+		rgba(0, 0, 0, 0) 100%
+	);
+
+	mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 1) 18%,
+		rgba(0, 0, 0, 0.85) 40%,
+		rgba(0, 0, 0, 0.45) 70%,
+		rgba(0, 0, 0, 0) 100%
+	);
+
+	filter: drop-shadow(0 0 3px rgba(255, 70, 70, 0.55))
+		drop-shadow(0 0 10px rgba(255, 60, 60, 0.35))
+		drop-shadow(0 0 18px rgba(255, 40, 40, 0.18));
+
+	animation: flicker 6s infinite alternate;
+}
+
+@keyframes flicker {
+	0% {
+		opacity: 0.3;
+	}
+	40% {
+		opacity: 0.45;
+	}
+	70% {
+		opacity: 0.38;
+	}
+	100% {
+		opacity: 0.42;
+	}
+}
+
+@keyframes energyFieldPulse {
+	0% {
+		transform: scale(1) translateX(0px);
+		opacity: 0.75;
+	}
+	50% {
+		transform: scale(1.02) translateX(1px);
+		opacity: 0.95;
+	}
+	100% {
+		transform: scale(1) translateX(-1px);
+		opacity: 0.85;
+	}
+}
+
+.cyberpunk-text {
+	position: relative;
+	z-index: 2;
+
+	font-family: "Cyberpunk", sans-serif;
+	font-size: 80px;
+	letter-spacing: -10px;
+
+	color: #f8ef02;
+
+	white-space: nowrap;
+
+	text-shadow:
+		0 0 2px rgba(248, 239, 2, 0.7),
+		0 0 6px rgba(248, 239, 2, 0.25);
+}
+
+.cyberpunk-text-wrapper {
+	position: absolute;
+	margin-bottom: 200px;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 120%;
+	z-index: 20;
+}
+
+.cyberpunk-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	font-family: "Cyberpunk", sans-serif;
+	font-size: 88px;
+	letter-spacing: -10px;
+
+	color: rgba(0, 0, 0, 0.22);
+
+	z-index: 1;
+	pointer-events: none;
+
+	white-space: nowrap;
+}
+
+.cyberpunk-shadow .leo {
+	display: inline-block;
+	transform: translateX(-36px);
+	text-shadow: -14px 0 18px rgba(0, 0, 0, 0.18);
+}
+
+.cyberpunk-shadow .tang {
+	display: inline-block;
+	transform: translateX(18px);
+	text-shadow: 14px 0 18px rgba(0, 0, 0, 0.18);
+}
+
+.cyberpunk-title {
+	height: auto;
+
+	display: block;
+	z-index: 2;
+	filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.25))
+		drop-shadow(0 0 18px rgba(0, 255, 255, 0.15));
+}
+
+.title-wrapper {
+	position: relative;
+	display: inline-block;
+	pointer-events: none;
+}
+
+.title-main {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	max-width: 600px;
+	height: auto;
+	filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.2))
+		drop-shadow(0 0 18px rgba(0, 255, 255, 0.1));
+}
+
+.title-shadow {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+
+	width: 100%;
+	max-width: 600px;
+	height: auto;
+
+	z-index: 1;
+
+	opacity: 0.35;
+	filter: brightness(0) blur(0.5px);
+}
+
+.cyber-button {
+	width: 100%;
+	height: 7vh;
+	max-height: 60px;
+	cursor: pointer;
+	display: block;
+	overflow: visible;
+	min-width: 100%;
+}
+
+.btn-shape {
+	fill: transparent;
+	stroke: transparent;
+	width: 100%;
+	stroke-width: 1;
+	transition: all 0.25s ease;
+}
+
+.cyber-button text {
+	font-family: "Oxanium", sans-serif;
+	fill: rgb(255, 70, 70);
+	letter-spacing: 0px;
+	text-transform: uppercase;
+}
+
+.cyber-button:hover .btn-shape {
+	fill: rgba(10, 10, 14, 0.65);
+	stroke: rgba(0, 255, 255, 0.9);
+}
+
+.cyber-button:hover text {
+	fill: rgb(0, 255, 255);
+}
+
+.bottom-left-text {
+	position: absolute;
+	bottom: 9%;
+	left: 4%;
+
+	font-family: "Oxanium", sans-serif;
+	font-size: 24px;
+	color: rgb(255, 70, 70);
+	text-shadow: 0 0 6px rgba(255, 70, 70, 0.25);
+}
