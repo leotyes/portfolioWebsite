@@ -1,14 +1,22 @@
 const cursor = document.getElementById("cursor");
 
-let mouseX = 0;
-let mouseY = 0;
+// Detect coarse pointer (touch) devices
+const isTouch = window.matchMedia('(pointer: coarse)').matches || /Mobi|Android|iPhone|iPad|Tablet|Mobile/.test(navigator.userAgent);
 
-document.addEventListener("mousemove", (e) => {
-	mouseX = e.clientX;
-	mouseY = e.clientY;
-	cursor.style.left = e.clientX + "px";
-	cursor.style.top = e.clientY + "px";
-});
+if (isTouch) {
+  if (cursor) cursor.style.display = "none";
+} else {
+  let mouseX = 0;
+  let mouseY = 0;
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (cursor) {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    }
+  });
+}
 
 function bindCursorHover() {
 	const cursor = document.getElementById("cursor");

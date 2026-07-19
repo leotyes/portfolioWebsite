@@ -55,12 +55,10 @@ body {
 	position: absolute;
 	inset: 0;
 
-	background: radial-gradient(
-		circle at center,
-		transparent 35%,
-		rgba(0, 0, 0, 0.35) 65%,
-		rgba(0, 0, 0, 0.85) 100%
-	);
+	background: radial-gradient(circle at center,
+			transparent 35%,
+			rgba(0, 0, 0, 0.35) 65%,
+			rgba(0, 0, 0, 0.85) 100%);
 
 	pointer-events: none;
 }
@@ -70,11 +68,9 @@ body {
 	position: absolute;
 	inset: 0;
 
-	background: radial-gradient(
-		circle at 30% 40%,
-		rgba(255, 40, 40, 0.08),
-		transparent 60%
-	);
+	background: radial-gradient(circle at 30% 40%,
+			rgba(255, 40, 40, 0.08),
+			transparent 60%);
 
 	mix-blend-mode: screen;
 	opacity: 0.6;
@@ -85,15 +81,19 @@ body {
 	0% {
 		transform: scale(1.05) translate(0px, 0px);
 	}
+
 	25% {
 		transform: scale(1.07) translate(-6px, 4px);
 	}
+
 	50% {
 		transform: scale(1.06) translate(4px, -5px);
 	}
+
 	75% {
 		transform: scale(1.08) translate(-3px, -3px);
 	}
+
 	100% {
 		transform: scale(1.05) translate(0px, 0px);
 	}
@@ -113,21 +113,15 @@ body {
 	inset: 0;
 
 	background:
-		radial-gradient(
-			ellipse at 50% 18%,
+		radial-gradient(ellipse at 50% 18%,
 			rgba(255, 40, 40, 0.22),
-			transparent 80%
-		),
-		radial-gradient(
-			ellipse at 15% 25%,
+			transparent 80%),
+		radial-gradient(ellipse at 15% 25%,
 			rgba(255, 40, 40, 0.14),
-			transparent 85%
-		),
-		radial-gradient(
-			ellipse at 85% 25%,
+			transparent 85%),
+		radial-gradient(ellipse at 85% 25%,
 			rgba(255, 40, 40, 0.14),
-			transparent 85%
-		),
+			transparent 85%),
 		radial-gradient(ellipse at 50% 0%, rgba(255, 40, 40, 0.08), transparent 90%);
 
 	mix-blend-mode: screen;
@@ -139,13 +133,11 @@ body {
 	position: absolute;
 	inset: 0;
 
-	background: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 0.02) 0%,
-		rgba(0, 0, 0, 0.15) 35%,
-		rgba(0, 0, 0, 0.45) 70%,
-		rgba(0, 0, 0, 0.75) 100%
-	);
+	background: linear-gradient(to bottom,
+			rgba(0, 0, 0, 0.02) 0%,
+			rgba(0, 0, 0, 0.15) 35%,
+			rgba(0, 0, 0, 0.45) 70%,
+			rgba(0, 0, 0, 0.75) 100%);
 
 	mix-blend-mode: multiply;
 }
@@ -164,21 +156,15 @@ body {
 	inset: 0;
 
 	background:
-		radial-gradient(
-			ellipse at 50% 18%,
+		radial-gradient(ellipse at 50% 18%,
 			rgba(255, 40, 40, 0.14),
-			transparent 80%
-		),
-		radial-gradient(
-			ellipse at 15% 25%,
+			transparent 80%),
+		radial-gradient(ellipse at 15% 25%,
 			rgba(255, 40, 40, 0.08),
-			transparent 85%
-		),
-		radial-gradient(
-			ellipse at 85% 25%,
+			transparent 85%),
+		radial-gradient(ellipse at 85% 25%,
 			rgba(255, 40, 40, 0.08),
-			transparent 85%
-		),
+			transparent 85%),
 		radial-gradient(ellipse at 50% 0%, rgba(255, 40, 40, 0.05), transparent 90%);
 
 	mix-blend-mode: screen;
@@ -190,13 +176,11 @@ body {
 	position: absolute;
 	inset: 0;
 
-	background: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 0.02) 0%,
-		rgba(0, 0, 0, 0.15) 35%,
-		rgba(0, 0, 0, 0.45) 70%,
-		rgba(0, 0, 0, 0.75) 100%
-	);
+	background: linear-gradient(to bottom,
+			rgba(0, 0, 0, 0.02) 0%,
+			rgba(0, 0, 0, 0.15) 35%,
+			rgba(0, 0, 0, 0.45) 70%,
+			rgba(0, 0, 0, 0.75) 100%);
 
 	mix-blend-mode: multiply;
 }
@@ -278,8 +262,7 @@ body {
 	letter-spacing: 0px;
 	text-transform: uppercase;
 
-	filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.35))
-		drop-shadow(0 0 6px rgba(0, 255, 255, 0.15));
+	filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.35)) drop-shadow(0 0 6px rgba(0, 255, 255, 0.15));
 }
 
 .btn-shape-back {
@@ -294,4 +277,34 @@ body {
 .hidden {
 	visibility: hidden !important;
 	pointer-events: none !important;
+}
+
+#orientationOverlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	color: rgb(255, 70, 70);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-family: "Oxanium", sans-serif;
+	font-size: 1.5rem;
+	z-index: 1000;
+	pointer-events: none;
+}
+
+#orientationOverlay p {
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 1rem 2rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	backdrop-filter: blur(4px);
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+	#orientationOverlay {
+		display: flex;
+	}
 }
