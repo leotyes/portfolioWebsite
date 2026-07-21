@@ -14,10 +14,14 @@ body {
 
 #cursor {
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 32px;
 	height: 32px;
 	pointer-events: none;
 	z-index: 99999;
+	transform: translate3d(-50%, -50%, 0);
+	will-change: transform;
 }
 
 * {
@@ -208,6 +212,41 @@ body {
 
 	font-family: "Oxanium", sans-serif;
 	color: rgb(255, 70, 70);
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+	.top-hud {
+		padding: 0 1.25%;
+		height: 48px;
+		min-height: 48px;
+	}
+
+	.hud-title {
+		font-size: 16px;
+		letter-spacing: 2px;
+	}
+
+	.back-button {
+		width: 78px;
+		height: 30px;
+		min-height: 30px;
+	}
+
+	.download-button {
+		width: 120px;
+		height: 30px;
+		min-height: 30px;
+	}
+
+	.back-cyber-button text,
+	.download-button text {
+		font-size: 14px;
+	}
+
+	.hud-bar {
+		left: 1.25%;
+		width: 97.5%;
+	}
 }
 
 .hud-bar {

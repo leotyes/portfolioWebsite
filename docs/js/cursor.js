@@ -1,4 +1,8 @@
 const cursor = document.getElementById("cursor");
+let mouseX = 0;
+let mouseY = 0;
+let cursorFrame = null;
+let cursorMode = "normal";
 
 // Detect coarse pointer (touch) devices
 const isTouch = window.matchMedia('(pointer: coarse)').matches || /Mobi|Android|iPhone|iPad|Tablet|Mobile/.test(navigator.userAgent);
@@ -6,16 +10,27 @@ const isTouch = window.matchMedia('(pointer: coarse)').matches || /Mobi|Android|
 if (isTouch) {
   if (cursor) cursor.style.display = "none";
 } else {
-  let mouseX = 0;
-  let mouseY = 0;
   document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    if (cursor) {
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
-    }
+
+		if (cursorFrame !== null) return;
+
+		cursorFrame = window.requestAnimationFrame(() => {
+			cursorFrame = null;
+
+			if (!cursor) return;
+
+			cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+			syncCursorState();
+		});
   });
+}
+
+function setCursorMode(mode) {
+	if (!cursor || cursorMode === mode) return;
+	cursorMode = mode;
+	cursor.src = mode === "click" ? "pictures/CursorClick.png" : "pictures/CursorNormal.png";
 }
 
 function bindCursorHover() {
@@ -29,11 +44,11 @@ function bindCursorHover() {
 		el.dataset.cursorBound = "true";
 
 		el.addEventListener("mouseenter", () => {
-			cursor.src = "pictures/CursorClick.png";
+			setCursorMode("click");
 		});
 
 		el.addEventListener("mouseleave", () => {
-			cursor.src = "pictures/CursorNormal.png";
+			setCursorMode("normal");
 		});
 	});
 }
@@ -71,8 +86,8 @@ function syncCursorState() {
 	const el = document.elementFromPoint(mouseX, mouseY);
 
 	if (el && el.closest(".clickable")) {
-		cursor.src = "pictures/CursorClick.png";
+		setCursorMode("click");
 	} else {
-		cursor.src = "pictures/CursorNormal.png";
+		setCursorMode("normal");
 	}
 }

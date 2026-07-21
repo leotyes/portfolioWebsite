@@ -12,6 +12,7 @@ function bindSpaLinks() {
 				const html = await fetch(url).then((r) => r.text());
 				const doc = new DOMParser().parseFromString(html, "text/html");
 				await syncPageStyles(doc);
+				await syncPageScripts(doc);
 
 				const newContent = doc.querySelector("#app");
 				if (!newContent) return;
@@ -26,12 +27,11 @@ function bindSpaLinks() {
 					backUpdater();
 					updateSvgButtons();
 					bindCursorHover();
-					syncCursorState();
-                    bindIconHoverSwap();
-                    bindProjectClicks();
-                    setProject("portfolio");
+					bindIconHoverSwap();
+					initProjectsPage();
 					applyBodyStyles();
-					updateRightTitle(); // TODO do not remove make the update functions all one function
+					updateRightTitle();
+                    syncCursorState(); // TODO do not remove make the update functions all one function
 				});
 			} catch (err) {}
 		});
@@ -58,17 +58,44 @@ function syncPageStyles(doc) {
 	});
 }
 
+function syncPageScripts(doc) {
+	const currentScripts = new Set(
+		Array.from(document.querySelectorAll("script[src]")).map((script) => {
+			return new URL(script.getAttribute("src"), window.location.href).href;
+		})
+	);
+
+	const nextScripts = Array.from(doc.querySelectorAll("script[src]")).filter((script) => {
+		const src = new URL(script.getAttribute("src"), window.location.href).href;
+		return !src.endsWith("js/reload.js") && !currentScripts.has(src);
+	});
+
+	return nextScripts.reduce((promise, script) => {
+		return promise.then(
+			() =>
+				new Promise((resolve) => {
+					const nextScript = document.createElement("script");
+					nextScript.src = script.getAttribute("src");
+					nextScript.defer = script.hasAttribute("defer");
+					nextScript.type = script.getAttribute("type") || "text/javascript";
+					nextScript.onload = resolve;
+					nextScript.onerror = resolve;
+					document.head.appendChild(nextScript);
+				})
+		);
+	}, Promise.resolve());
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	bindSpaLinks();
 	backUpdater();
 	updateSvgButtons();
 	bindCursorHover();
-    bindIconHoverSwap();
-    bindProjectClicks();
-    setProject("portfolio");
-	syncCursorState();
+	bindIconHoverSwap();
+	initProjectsPage();
 	updateRightTitle();
-    applyBodyStyles();
+	applyBodyStyles();
+    syncCursorState();
 });
 
 function applyBodyStyles() {
@@ -78,7 +105,7 @@ function applyBodyStyles() {
         console.log("switched");
 		document.body.style.cssText = `
             margin: 0;
-            height: 100vh;
+            height: 100svh;
 
             background: #07070a;
 
@@ -93,7 +120,7 @@ function applyBodyStyles() {
         console.log("working");
 		document.body.style.cssText = `
             margin: 0;
-            height: 100vh;
+            height: 100svh;
             background: #07070a;
             font-family: "Poppins", sans-serif;
             display: flex;
@@ -111,6 +138,7 @@ window.addEventListener("popstate", async () => {
 		const html = await fetch(url).then((r) => r.text());
 		const doc = new DOMParser().parseFromString(html, "text/html");
 		await syncPageStyles(doc);
+		await syncPageScripts(doc);
 
 		const newContent = doc.querySelector("#app");
 		if (!newContent) return;
@@ -122,11 +150,10 @@ window.addEventListener("popstate", async () => {
 			updateSvgButtons();
 			bindCursorHover();
 			syncCursorState();
-            bindIconHoverSwap();
+			bindIconHoverSwap();
 			applyBodyStyles();
 			updateRightTitle();
-            bindProjectClicks();
-            setProject("portfolio");
+			initProjectsPage();
 		});
 
 		bindSpaLinks();
