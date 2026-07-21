@@ -122,3 +122,12 @@ function bindProjectClicks() {
 		});
 	});
 }
+
+function initProjectsPage() {
+	bindProjectClicks();
+	setProject("portfolio");
+}
+
+window.initProjectsPage = initProjectsPage;
+
+console.log("projects entered");

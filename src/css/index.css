@@ -288,5 +288,15 @@
 	font-size: 24px;
 	color: rgb(255, 70, 70);
 	text-shadow: 0 0 6px rgba(255, 70, 70, 0.25);
-	z-index: 1001;
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+	.buttons-container {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+
+	.bottom-left-text {
+		font-size: 12px;
+	}
 }

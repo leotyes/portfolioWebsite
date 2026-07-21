@@ -85,3 +85,10 @@
 	user-select: none;
 	text-align: center;
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+	.coming-soon {
+		font-size: clamp(28px, 5vw, 56px);
+		letter-spacing: 4px;
+	}
+}

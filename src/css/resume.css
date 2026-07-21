@@ -5,7 +5,7 @@ body {
 
 .page {
 	width: 100%;
-	height: 100vh;
+	height: 100svh;
 
 	display: flex;
 	align-items: center;
@@ -17,14 +17,14 @@ body {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 100vh;
+	height: 100svh;
 }
 
 .right-stack {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	padding-top: 24px;
+	padding-bottom: 10px;
 	gap: 12px;
 }
 
@@ -250,9 +250,91 @@ body {
 	width: 100%;
 	margin-top: -4px;
 }
+
+@media (orientation: landscape) and (max-height: 500px) {
+	body {
+		justify-content: center;
+		padding-left: 0 !important;
+	}
+
+	.page,
+	.center-layout {
+		width: 100vw;
+		height: 100svh;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.right-stack {
+		align-items: center;
+		width: 80vw;
+		padding-top: 8px;
+		padding-bottom: 10px;
+		gap: 8px;
+		height: 100svh;
+		box-sizing: border-box;
+	}
+
+	.content-row {
+		justify-content: center;
+		width: 100%;
+		flex: 1;
+		min-height: 0;
+		align-items: stretch;
+	}
+
+	.left-deco {
+		display: none;
+	}
+
+	.center-box {
+		width: 100%;
+		height: auto;
+		padding: 24px;
+		box-sizing: border-box;
+	}
+
+	.center-title {
+		font-size: 24px;
+	}
+
+	.center-subtitle {
+		font-size: 11px;
+	}
+
+	.resume-title {
+		font-size: 18px;
+	}
+
+	.entry-title {
+		font-size: 15px;
+	}
+
+	.entry-date,
+	.entry-location,
+	.resume-subtitle,
+	.resume-item {
+		font-size: 12px;
+	}
+
+	.resume-section {
+		margin-bottom: 18px;
+	}
+
+	.resume-entry {
+		margin-bottom: 12px;
+	}
+
+	.button-row {
+		width: 100%;
+		justify-content: flex-end;
+		margin-top: 0;
+	}
+}
+
 body {
 	margin: 0;
-	height: 100vh;
+	height: 100svh;
 
 	background: #07070a;
 
