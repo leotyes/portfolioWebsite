@@ -30,6 +30,7 @@
 	font-size: 42px;
 	color: rgb(193, 236, 233);
 	font-weight: 350;
+	text-align: center;
 
 	text-shadow:
 		0 0 6px rgba(0, 255, 255, 0.4),
@@ -43,6 +44,7 @@
 	font-size: 28px;
 	font-weight: 300;
 	color: rgb(193, 236, 233);
+	text-align: center;
 
 	text-shadow:
 		0 0 6px rgba(0, 255, 255, 0.4),
@@ -121,4 +123,78 @@
 .credit-fill {
 	flex: 1;
 	pointer-events: none;
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+	body {
+		justify-content: flex-start !important;
+		padding-left: 6vw !important;
+	}
+
+	#app {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+	}
+
+	.credits-page {
+		width: 100%;
+		height: 100svh;
+		min-height: 100vh;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 10px 0;
+		box-sizing: border-box;
+	}
+
+	.credits-column {
+		width: 44vw;
+		min-width: 280px;
+		max-width: 380px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 0;
+	}
+
+	.credits-subtitle {
+		font-size: clamp(13px, 3.8vh, 16px);
+		margin-bottom: 6px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.credits-title {
+		font-size: clamp(18px, 5.5vh, 24px);
+		margin-bottom: 12px;
+		text-align: center;
+		line-height: 1.2;
+		width: 100%;
+	}
+
+	.credit-row {
+		font-size: clamp(13px, 3.5vh, 15px);
+		margin-bottom: 8px;
+		width: 100%;
+	}
+
+	.credit-label {
+		padding-right: 10px;
+	}
+
+	.credits-back-spacer {
+		margin-top: 10px;
+	}
+
+	.back-button {
+		width: 80px;
+		height: 32px;
+		min-height: 32px;
+	}
+
+	.back-cyber-button text {
+		font-size: 15px;
+	}
 }
